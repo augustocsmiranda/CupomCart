@@ -1,4 +1,4 @@
-package model;
+package dados;
 
 public interface Repositorio {
 

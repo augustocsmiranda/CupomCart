@@ -1,5 +1,5 @@
 package model;
 
-public class Usuario {
+public abstract class Usuario {
 
 }
