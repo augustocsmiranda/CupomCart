@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 
 
 public class Main extends Application {
@@ -15,9 +16,10 @@ public class Main extends Application {
 		
 			primaryStage.setTitle("GerServCart");
 			Parent inicial = FXMLLoader.load(getClass().getResource("../application/mainScene.fxml"));
-			Scene scene = new Scene(inicial,600,600);
+			Scene scene = new Scene(inicial,500,500);
+			primaryStage.getIcons().add(new Image("file:///D:/Programming/IP2/GerServCart/UFRPEIPIIReturn/project/src/application/iconeApp.png"));
 			
-		//	scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		//	scene.getStylesheets().add("application.css");
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			

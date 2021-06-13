@@ -1,21 +1,25 @@
 package model;
 
+import java.time.LocalDate;
+
 public abstract class Funcionario extends Usuario {
 
 	private String login;
 	private String senha;
 	private String nome;
 	private String cpf;
+	private LocalDate dataNascimento;
 	private String funcao;
 	
 	
 	
 	
-	public Funcionario(String login, String senha, String nome, String cpf, String funcao) {
+	public Funcionario(String login, String senha, String nome, String cpf, LocalDate dataNascimento, String funcao) {
 		this.login = login;
 		this.senha = senha;
 		this.nome = nome;
 		this.cpf = cpf;
+		this.dataNascimento = dataNascimento;
 		this.funcao = funcao;
 	}
 	
@@ -43,6 +47,14 @@ public abstract class Funcionario extends Usuario {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
 	public String getFuncao() {
 		return funcao;
 	}
