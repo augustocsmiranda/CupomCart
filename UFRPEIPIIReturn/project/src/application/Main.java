@@ -2,6 +2,7 @@ package application;
 	
 import gui.ScreenManager;
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
@@ -10,10 +11,11 @@ import javafx.scene.image.Image;
 
 
 public class Main extends Application {
+	
+	private static Stage cenaAtual;
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			
 			
 			primaryStage.setScene(ScreenManager.getInstance().getMainScene());
 	        primaryStage.setTitle("GerServCart");
@@ -24,6 +26,8 @@ public class Main extends Application {
 	        ScreenManager.getInstance().setPrimaryStage(primaryStage);
 	        
 	        primaryStage.show();
+	        
+	        cenaAtual = primaryStage;
 //			primaryStage.setTitle("GerServCart");
 //			primaryStage.setResizable(false);
 //			Parent inicial = FXMLLoader.load(getClass().getResource("../application/mainScene.fxml"));
@@ -38,7 +42,29 @@ public class Main extends Application {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+			
 	}
+	
+	public void teste() {
+		
+	}
+	
+	public static void mudarTela(String tela) {
+		switch (tela) {
+	case "cadastro":
+		cenaAtual.setScene(ScreenManager.getInstance().getCadastroFuncionarios());
+		break;
+	case "Caixa":
+		cenaAtual.setScene(ScreenManager.getInstance().getProcessos());
+		break;
+	case "Mesas":
+		cenaAtual.setScene(ScreenManager.getInstance().getMainScene());
+		break;
+		}
+	}
+	
+	
+	
 	
 	public static void main(String[] args) {
 		launch(args);
