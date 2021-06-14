@@ -11,9 +11,6 @@ public abstract class Funcionario extends Usuario {
 	private LocalDate dataNascimento;
 	private String funcao;
 	
-	
-	
-	
 	public Funcionario(String login, String senha, String nome, String cpf, LocalDate dataNascimento, String funcao) {
 		this.login = login;
 		this.senha = senha;

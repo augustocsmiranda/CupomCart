@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="500.0" prefWidth="500.0">
+         <children>
+            <Label layoutX="122.0" layoutY="31.0" text="Manutenção de Funcionários">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <ListView layoutX="22.0" layoutY="113.0" prefHeight="367.0" prefWidth="339.0" />
+            <Label layoutX="22.0" layoutY="80.0" text="Listagem de funcionário:s">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="378.0" layoutY="113.0" mnemonicParsing="false" text="Editar" />
+            <Button layoutX="378.0" layoutY="152.0" mnemonicParsing="false" text="Remover" />
+            <Button layoutX="378.0" layoutY="192.0" mnemonicParsing="false" text="Cadastrar" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
