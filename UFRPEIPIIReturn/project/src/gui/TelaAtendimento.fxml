@@ -30,7 +30,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="241.0" layoutY="161.0" text="Data de Nascimento:">
+            <Label layoutX="237.0" layoutY="162.0" text="Data de Nascimento:">
                <font>
                   <Font size="14.0" />
                </font>
@@ -40,15 +40,14 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="250.0" layoutY="201.0" text="Numero do Cupom:">
+            <Label layoutX="243.0" layoutY="201.0" text="Numero do Cupom:">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
             <TextField layoutX="74.0" layoutY="158.0" />
             <TextField layoutX="74.0" layoutY="198.0" />
-            <TextField layoutX="376.0" layoutY="159.0" prefHeight="25.0" prefWidth="101.0" />
-            <TextField layoutX="377.0" layoutY="201.0" prefHeight="25.0" prefWidth="101.0" />
+            <TextField layoutX="377.0" layoutY="201.0" prefHeight="25.0" prefWidth="108.0" />
             <TextField layoutX="138.0" layoutY="238.0" prefHeight="25.0" prefWidth="241.0" />
             <Label layoutX="15.0" layoutY="282.0" text="Tipo de Atendimento:">
                <font>
@@ -61,6 +60,7 @@
             <RadioButton layoutX="121.0" layoutY="314.0" mnemonicParsing="false" text="Reconhecimento de Firma" />
             <Button layoutX="141.0" layoutY="409.0" mnemonicParsing="false" text="Concluir" />
             <Button layoutX="282.0" layoutY="409.0" mnemonicParsing="false" text="Abrir Processor" />
+            <DatePicker layoutX="378.0" layoutY="159.0" prefHeight="25.0" prefWidth="108.0" />
          </children>
       </Pane>
    </children>

@@ -16,9 +16,8 @@
                </font>
             </Label>
             <Label layoutX="23.0" layoutY="124.0" text="Nome:" />
-            <Label layoutX="283.0" layoutY="124.0" text="Data de Nascimento:" />
-            <TextField layoutX="62.0" layoutY="120.0" prefHeight="25.0" prefWidth="200.0" />
-            <TextField layoutX="399.0" layoutY="120.0" prefHeight="25.0" prefWidth="87.0" />
+            <Label layoutX="254.0" layoutY="124.0" text="Data de Nascimento:" />
+            <TextField layoutX="62.0" layoutY="120.0" prefHeight="25.0" prefWidth="169.0" />
             <TextField layoutX="337.0" layoutY="165.0" />
             <TextField layoutX="63.0" layoutY="165.0" />
             <Label layoutX="289.0" layoutY="169.0" text="Função:" />
@@ -29,6 +28,7 @@
             <Label layoutX="23.0" layoutY="213.0" text="Login:" />
             <Button layoutX="217.0" layoutY="273.0" mnemonicParsing="false" text="Cadastrar" />
             <ListView layoutY="319.0" prefHeight="182.0" prefWidth="500.0" />
+            <DatePicker layoutX="376.0" layoutY="120.0" prefHeight="25.0" prefWidth="110.0" />
          </children>
       </Pane>
    </children>
