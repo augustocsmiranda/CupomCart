@@ -5,7 +5,6 @@ public class Guiche {
 	private Integer identificador;
 	private boolean disponivel;
 	
-	
 	public Integer getIdentificador() {
 		return identificador;
 	}

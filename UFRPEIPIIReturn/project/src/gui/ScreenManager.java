@@ -28,6 +28,9 @@ public class ScreenManager {
 	    
 	    private Scene painelAdm;
 	    private PainelAdministradorController painelAdmController;
+
+		private Scene monitor;
+	    private MonitorController monitorController;
 	    
 	
 		private ScreenManager() { 
@@ -50,12 +53,12 @@ public class ScreenManager {
 		        this.mainScreenController = (MainScreenController) fxmlLoader.getController();	           
 		        
 	            fxmlLoader = new FXMLLoader();
-	            Parent cadastro = FXMLLoader.load(getClass().getResource("../gui/TelaAtendimento.fxml"));
+	            Parent cadastro = FXMLLoader.load(getClass().getResource("../gui/TelaCadastroFuncionarios.fxml"));
 	            this.cadastroFuncionarios = new Scene(cadastro,500,500); 
 	            this.cadastroFuncionariosController = (TelaCadastroFuncionariosController) fxmlLoader.getController();
 	           
 	            fxmlLoader = new FXMLLoader();
-	            Parent atendimento = FXMLLoader.load(getClass().getResource("../gui/TelaCadastroFuncionarios.fxml"));
+	            Parent atendimento = FXMLLoader.load(getClass().getResource("../gui/TelaAtendimento.fxml"));
 	            this.atendimento = new Scene(atendimento,500,500); 
 	            this.atendimentoController = (TelaAtendimentoController) fxmlLoader.getController();
 	            
@@ -73,6 +76,11 @@ public class ScreenManager {
 	            Parent manutencaoF = FXMLLoader.load(getClass().getResource("../gui/TelaManutencaoFuncionarios.fxml"));
 	            this.manutencaoFuncionarios = new Scene(manutencaoF,500,500); 
 	            this.manutencaoFuncionariosController = (TelaManutencaoFuncionariosController) fxmlLoader.getController();
+	            
+	            fxmlLoader = new FXMLLoader();
+	            Parent monitor = FXMLLoader.load(getClass().getResource("../gui/TelaManutencaoFuncionarios.fxml"));
+	            this.monitor = new Scene(monitor,500,500); 
+	            this.monitorController = (MonitorController) fxmlLoader.getController();
 	 
 	          
 	        } catch (IOException e) {
@@ -187,7 +195,21 @@ public class ScreenManager {
 			this.painelAdmController = painelAdmController;
 		}
 
-	    
+		public Scene getMonitor() {
+			return monitor;
+		}
+
+		public void setMonitor(Scene monitor) {
+			this.monitor = monitor;
+		}
+
+		public MonitorController getMonitorController() {
+			return monitorController;
+		}
+
+		public void setMonitorController(MonitorController monitorController) {
+			this.monitorController = monitorController;
+		} 
 	    
 	
 }

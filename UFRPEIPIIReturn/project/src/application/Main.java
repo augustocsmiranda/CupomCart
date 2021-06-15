@@ -56,12 +56,26 @@ public class Main extends Application {
 	case "cadastro":
 		stage.setScene(ScreenManager.getInstance().getCadastroFuncionarios());
 		break;
-	case "Caixa":
+	case "processo":
 		stage.setScene(ScreenManager.getInstance().getProcessos());
 		break;
-	case "Mesas":
+	case "main":
 		stage.setScene(ScreenManager.getInstance().getMainScene());
 		break;
+	case "atendimento":
+		stage.setScene(ScreenManager.getInstance().getAtendimento());
+		break;
+	case "manutencao":
+		stage.setScene(ScreenManager.getInstance().getManutencaoFuncionarios());
+		break;
+	case "painelAdm":
+		stage.setScene(ScreenManager.getInstance().getPainelAdm());
+		break;
+	case "monitor":
+		stage.setScene(ScreenManager.getInstance().getMonitor());
+		break;
+		
+		
 		}
 	}
 	

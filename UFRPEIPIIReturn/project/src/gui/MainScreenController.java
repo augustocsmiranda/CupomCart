@@ -9,11 +9,18 @@ import javafx.stage.Stage;
 public class MainScreenController {
 
 	@FXML
+	private Button BTNCadastrar;
+	@FXML
 	private Button BTNEntrar;
 	
 	@FXML
-	public void apertar(ActionEvent event) {
+	public void BTNCadastrar(ActionEvent event) {
 		Main.mudarTela("cadastro");
+	}
+	@FXML
+	public void BTNEntrar(ActionEvent event) {
+		Main.mudarTela("atendimento");
+		//Main.mudarTela("painelAdm");
 	}
 	
 }

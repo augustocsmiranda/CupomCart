@@ -7,15 +7,38 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MonitorController">
    <children>
       <Pane prefHeight="500.0" prefWidth="500.0">
          <children>
-            <Label alignment="CENTER" layoutX="68.0" layoutY="14.0" prefHeight="105.0" prefWidth="365.0" text="Tela de geração e  informações de chamadas de cupons" textAlignment="CENTER" wrapText="true">
+            <Label alignment="CENTER" layoutX="68.0" layoutY="51.0" prefHeight="64.0" prefWidth="365.0" text="Tela de geração e informações de chamadas de cupons" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
+            <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="500.0">
+               <menus>
+                  <Menu mnemonicParsing="false" text="Exibir Tela">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Atendimento" />
+                        <MenuItem mnemonicParsing="false" text="Monitor" />
+                        <MenuItem mnemonicParsing="false" text="Painel Administrador" />
+                        <MenuItem mnemonicParsing="false" text="Processos" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Ajuda">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Descrição da página" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Sair">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Logout" />
+                        <MenuItem mnemonicParsing="false" text="Fechar" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
          </children>
       </Pane>
    </children>
