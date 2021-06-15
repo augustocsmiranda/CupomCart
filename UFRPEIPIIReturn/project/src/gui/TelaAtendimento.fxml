@@ -6,61 +6,84 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.TelaAtendimentoController">
    <children>
       <Pane prefHeight="500.0" prefWidth="500.0">
          <children>
-            <Label layoutX="158.0" layoutY="33.0" text="Tela de Atendimento">
+            <Label layoutX="158.0" layoutY="59.0" text="Tela de Atendimento">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutX="44.0" layoutY="108.0" text="Dados do cliente:">
+            <Label layoutX="44.0" layoutY="121.0" text="Dados do cliente:">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="23.0" layoutY="160.0" text="Nome:">
+            <Label layoutX="23.0" layoutY="173.0" text="Nome:">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="38.0" layoutY="200.0" text="CPF:">
+            <Label layoutX="38.0" layoutY="213.0" text="CPF:">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="241.0" layoutY="161.0" text="Data de Nascimento:">
+            <Label layoutX="237.0" layoutY="175.0" text="Data de Nascimento:">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="17.0" layoutY="240.0" text="Forma de Contato:">
+            <Label layoutX="17.0" layoutY="253.0" text="Forma de Contato:">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="250.0" layoutY="201.0" text="Numero do Cupom:">
+            <Label layoutX="243.0" layoutY="214.0" text="Numero do Cupom:">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="74.0" layoutY="158.0" />
-            <TextField layoutX="74.0" layoutY="198.0" />
-            <TextField layoutX="376.0" layoutY="159.0" prefHeight="25.0" prefWidth="101.0" />
-            <TextField layoutX="377.0" layoutY="201.0" prefHeight="25.0" prefWidth="101.0" />
-            <TextField layoutX="138.0" layoutY="238.0" prefHeight="25.0" prefWidth="241.0" />
-            <Label layoutX="15.0" layoutY="282.0" text="Tipo de Atendimento:">
+            <TextField layoutX="74.0" layoutY="171.0" />
+            <TextField layoutX="74.0" layoutY="211.0" />
+            <TextField layoutX="377.0" layoutY="214.0" prefHeight="25.0" prefWidth="108.0" />
+            <TextField layoutX="138.0" layoutY="251.0" prefHeight="25.0" prefWidth="241.0" />
+            <Label layoutX="15.0" layoutY="295.0" text="Tipo de Atendimento:">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <RadioButton layoutX="166.0" layoutY="284.0" mnemonicParsing="false" text="Atestado de óbito" />
-            <RadioButton layoutX="309.0" layoutY="284.0" mnemonicParsing="false" text="Certidão de Nascimento" />
-            <RadioButton layoutX="24.0" layoutY="314.0" mnemonicParsing="false" text="Casamento" />
-            <RadioButton layoutX="121.0" layoutY="314.0" mnemonicParsing="false" text="Reconhecimento de Firma" />
+            <RadioButton layoutX="166.0" layoutY="297.0" mnemonicParsing="false" text="Atestado de óbito" />
+            <RadioButton layoutX="309.0" layoutY="297.0" mnemonicParsing="false" text="Certidão de Nascimento" />
+            <RadioButton layoutX="24.0" layoutY="327.0" mnemonicParsing="false" text="Casamento" />
+            <RadioButton layoutX="121.0" layoutY="327.0" mnemonicParsing="false" text="Reconhecimento de Firma" />
             <Button layoutX="141.0" layoutY="409.0" mnemonicParsing="false" text="Concluir" />
-            <Button layoutX="282.0" layoutY="409.0" mnemonicParsing="false" text="Abrir Processor" />
+            <Button fx:id="BTNprocessos" layoutX="282.0" layoutY="409.0" mnemonicParsing="false" onAction="#BTNprocessos" text="Abrir Processo" />
+            <DatePicker layoutX="378.0" layoutY="172.0" prefHeight="25.0" prefWidth="108.0" />
+            <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="500.0">
+               <menus>
+                  <Menu mnemonicParsing="false" text="Exibir Tela">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Atendimento" />
+                        <MenuItem mnemonicParsing="false" text="Monitor" />
+                        <MenuItem mnemonicParsing="false" text="Painel Administrador" />
+                        <MenuItem mnemonicParsing="false" text="Processos" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Ajuda">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Descrição da página" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Sair">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Logout" />
+                        <MenuItem mnemonicParsing="false" text="Fechar" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
          </children>
       </Pane>
    </children>

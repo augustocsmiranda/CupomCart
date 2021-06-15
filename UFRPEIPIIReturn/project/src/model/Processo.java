@@ -7,10 +7,24 @@ public class Processo {
 	private String numero;
 	private LocalDate dataAbertura;
 	private Cliente cliente;
+	private String descricao;
+	private String status;
 	private Atendente atendente;
+
 	
 	
-	
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	public String getNumero() {
 		return numero;
 	}

@@ -6,7 +6,7 @@ public class Cupom {
 
 	private Integer id;
 	private Guiche guiche;
-	private String tipoAtendimento;
+	private String[] tipoAtendimento;
 	private LocalDateTime horaDeImpressao;
 	private boolean cupomChamado;
 	
@@ -24,10 +24,10 @@ public class Cupom {
 	public void setGuiche(Guiche guiche) {
 		this.guiche = guiche;
 	}
-	public String getTipoAtendimento() {
+	public String[] getTipoAtendimento() {
 		return tipoAtendimento;
 	}
-	public void setTipoAtendimento(String tipoAtendimento) {
+	public void setTipoAtendimento(String[] tipoAtendimento) {
 		this.tipoAtendimento = tipoAtendimento;
 	}
 	public LocalDateTime getHoraDeImpressao() {

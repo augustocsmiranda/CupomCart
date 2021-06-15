@@ -1,34 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.web.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.TelaCadastroFuncionariosController">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MonitorController">
    <children>
       <Pane prefHeight="500.0" prefWidth="500.0">
          <children>
-            <Label layoutX="138.0" layoutY="51.0" text="Cadastro de Funcionários">
+            <Label alignment="CENTER" layoutX="68.0" layoutY="51.0" prefHeight="64.0" prefWidth="365.0" text="Tela de geração e informações de chamadas de cupons" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutX="23.0" layoutY="138.0" text="Nome:" />
-            <Label layoutX="254.0" layoutY="138.0" text="Data de Nascimento:" />
-            <TextField layoutX="62.0" layoutY="134.0" prefHeight="25.0" prefWidth="169.0" />
-            <TextField layoutX="337.0" layoutY="179.0" />
-            <TextField layoutX="63.0" layoutY="179.0" />
-            <Label layoutX="289.0" layoutY="183.0" text="Função:" />
-            <Label layoutX="30.0" layoutY="183.0" text="CPF:" />
-            <TextField layoutX="337.0" layoutY="223.0" />
-            <TextField layoutX="62.0" layoutY="223.0" />
-            <Label layoutX="289.0" layoutY="227.0" text="Senha:" />
-            <Label layoutX="23.0" layoutY="227.0" text="Login:" />
-            <Button layoutX="217.0" layoutY="287.0" mnemonicParsing="false" text="Cadastrar" />
-            <ListView layoutY="319.0" prefHeight="182.0" prefWidth="500.0" />
-            <DatePicker layoutX="376.0" layoutY="134.0" prefHeight="25.0" prefWidth="110.0" />
             <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="500.0">
                <menus>
                   <Menu mnemonicParsing="false" text="Exibir Tela">

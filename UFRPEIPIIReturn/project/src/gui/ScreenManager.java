@@ -23,8 +23,17 @@ public class ScreenManager {
 	    private Scene processos;
 	    private TelaDeProcessosController processosController;
 	    
+	    private Scene manutencaoFuncionarios;
+	    private TelaManutencaoFuncionariosController manutencaoFuncionariosController;
 	    
-	    private ScreenManager() { 
+	    private Scene painelAdm;
+	    private PainelAdministradorController painelAdmController;
+
+		private Scene monitor;
+	    private MonitorController monitorController;
+	    
+	
+		private ScreenManager() { 
 	        this.initialize(); 
 	    }
 	    
@@ -39,17 +48,17 @@ public class ScreenManager {
 	        try {
 	        	
 	        	FXMLLoader fxmlLoader = new FXMLLoader();
-	        	Parent inicial = FXMLLoader.load(getClass().getResource("../application/mainScene.fxml"));
+	        	Parent inicial = FXMLLoader.load(getClass().getResource("../gui/mainScene.fxml"));
 				this.mainScene = new Scene(inicial,500,500); 
 		        this.mainScreenController = (MainScreenController) fxmlLoader.getController();	           
 		        
 	            fxmlLoader = new FXMLLoader();
-	            Parent cadastro = FXMLLoader.load(getClass().getResource("../gui/TelaAtendimento.fxml"));
+	            Parent cadastro = FXMLLoader.load(getClass().getResource("../gui/TelaCadastroFuncionarios.fxml"));
 	            this.cadastroFuncionarios = new Scene(cadastro,500,500); 
 	            this.cadastroFuncionariosController = (TelaCadastroFuncionariosController) fxmlLoader.getController();
 	           
 	            fxmlLoader = new FXMLLoader();
-	            Parent atendimento = FXMLLoader.load(getClass().getResource("../gui/TelaCadastroFuncionarios.fxml"));
+	            Parent atendimento = FXMLLoader.load(getClass().getResource("../gui/TelaAtendimento.fxml"));
 	            this.atendimento = new Scene(atendimento,500,500); 
 	            this.atendimentoController = (TelaAtendimentoController) fxmlLoader.getController();
 	            
@@ -57,6 +66,21 @@ public class ScreenManager {
 	            Parent processos = FXMLLoader.load(getClass().getResource("../gui/TelaDeProcessos.fxml"));
 	            this.processos = new Scene(processos,500,500); 
 	            this.processosController = (TelaDeProcessosController) fxmlLoader.getController();
+	            
+	            fxmlLoader = new FXMLLoader();
+	            Parent painel = FXMLLoader.load(getClass().getResource("../gui/PainelAdministrador.fxml"));
+	            this.painelAdm = new Scene(painel,500,500); 
+	            this.painelAdmController = (PainelAdministradorController) fxmlLoader.getController();
+	            
+	            fxmlLoader = new FXMLLoader();
+	            Parent manutencaoF = FXMLLoader.load(getClass().getResource("../gui/TelaManutencaoFuncionarios.fxml"));
+	            this.manutencaoFuncionarios = new Scene(manutencaoF,500,500); 
+	            this.manutencaoFuncionariosController = (TelaManutencaoFuncionariosController) fxmlLoader.getController();
+	            
+	            fxmlLoader = new FXMLLoader();
+	            Parent monitor = FXMLLoader.load(getClass().getResource("../gui/TelaManutencaoFuncionarios.fxml"));
+	            this.monitor = new Scene(monitor,500,500); 
+	            this.monitorController = (MonitorController) fxmlLoader.getController();
 	 
 	          
 	        } catch (IOException e) {
@@ -139,8 +163,53 @@ public class ScreenManager {
 		public static void setInstance(ScreenManager instance) {
 			ScreenManager.instance = instance;
 		}
-	    
-	    
+	    public Scene getManutencaoFuncionarios() {
+			return manutencaoFuncionarios;
+		}
+
+		public void setManutencaoFuncionarios(Scene manutencaoFuncionarios) {
+			this.manutencaoFuncionarios = manutencaoFuncionarios;
+		}
+
+		public TelaManutencaoFuncionariosController getManutencaoFuncionariosController() {
+			return manutencaoFuncionariosController;
+		}
+
+		public void setManutencaoFuncionariosController(TelaManutencaoFuncionariosController manutencaoFuncionariosController) {
+			this.manutencaoFuncionariosController = manutencaoFuncionariosController;
+		}
+
+		public Scene getPainelAdm() {
+			return painelAdm;
+		}
+
+		public void setPainelAdm(Scene painelAdm) {
+			this.painelAdm = painelAdm;
+		}
+
+		public PainelAdministradorController getPainelAdmController() {
+			return painelAdmController;
+		}
+
+		public void setPainelAdmController(PainelAdministradorController painelAdmController) {
+			this.painelAdmController = painelAdmController;
+		}
+
+		public Scene getMonitor() {
+			return monitor;
+		}
+
+		public void setMonitor(Scene monitor) {
+			this.monitor = monitor;
+		}
+
+		public MonitorController getMonitorController() {
+			return monitorController;
+		}
+
+		public void setMonitorController(MonitorController monitorController) {
+			this.monitorController = monitorController;
+		} 
 	    
 	
 }
