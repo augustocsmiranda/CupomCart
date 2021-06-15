@@ -65,7 +65,7 @@ public class ScreenManager {
 	            this.processosController = (TelaDeProcessosController) fxmlLoader.getController();
 	            
 	            fxmlLoader = new FXMLLoader();
-	            Parent painel = FXMLLoader.load(getClass().getResource("../gui/PaineAdministrador.fxml"));
+	            Parent painel = FXMLLoader.load(getClass().getResource("../gui/PainelAdministrador.fxml"));
 	            this.painelAdm = new Scene(painel,500,500); 
 	            this.painelAdmController = (PainelAdministradorController) fxmlLoader.getController();
 	            

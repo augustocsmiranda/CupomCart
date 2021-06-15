@@ -12,7 +12,7 @@ import javafx.scene.image.Image;
 
 public class Main extends Application {
 	
-	private static Stage cenaAtual;
+	private static Stage stage;
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -27,7 +27,9 @@ public class Main extends Application {
 	        
 	        primaryStage.show();
 	        
-	        cenaAtual = primaryStage;
+	        stage = primaryStage;
+	        
+	    //    cenaAtual = primaryStage;
 //			primaryStage.setTitle("GerServCart");
 //			primaryStage.setResizable(false);
 //			Parent inicial = FXMLLoader.load(getClass().getResource("../application/mainScene.fxml"));
@@ -52,13 +54,13 @@ public class Main extends Application {
 	public static void mudarTela(String tela) {
 		switch (tela) {
 	case "cadastro":
-		cenaAtual.setScene(ScreenManager.getInstance().getCadastroFuncionarios());
+		stage.setScene(ScreenManager.getInstance().getCadastroFuncionarios());
 		break;
 	case "Caixa":
-		cenaAtual.setScene(ScreenManager.getInstance().getProcessos());
+		stage.setScene(ScreenManager.getInstance().getProcessos());
 		break;
 	case "Mesas":
-		cenaAtual.setScene(ScreenManager.getInstance().getMainScene());
+		stage.setScene(ScreenManager.getInstance().getMainScene());
 		break;
 		}
 	}
