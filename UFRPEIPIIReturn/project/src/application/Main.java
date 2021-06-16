@@ -82,6 +82,9 @@ public class Main extends Application {
 	case "relatorioA":
 		stage.setScene(ScreenManager.getInstance().getRelatorioAtendimentos());
 		break;
+	case "login":
+		stage.setScene(ScreenManager.getInstance().getMainScene());
+		break;
 		
 		}
 	}

@@ -87,7 +87,7 @@ public class ScreenManager {
 	            this.manutencaoFuncionariosController = (TelaManutencaoFuncionariosController) fxmlLoader.getController();
 	            
 	            fxmlLoader = new FXMLLoader();
-	            Parent monitorL = FXMLLoader.load(getClass().getResource("../gui/TelaManutencaoFuncionarios.fxml"));
+	            Parent monitorL = FXMLLoader.load(getClass().getResource("../gui/Monitor.fxml"));
 	            this.monitor = new Scene(monitorL,500,500); 
 	            this.monitorController = (MonitorController) fxmlLoader.getController();
 	        
