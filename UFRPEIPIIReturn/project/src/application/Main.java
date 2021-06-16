@@ -29,14 +29,13 @@ public class Main extends Application {
 	        
 	        stage = primaryStage;
 	        
-	    //    cenaAtual = primaryStage;
 //			primaryStage.setTitle("GerServCart");
 //			primaryStage.setResizable(false);
 //			Parent inicial = FXMLLoader.load(getClass().getResource("../application/mainScene.fxml"));
 //			Scene scene = new Scene(inicial,500,500);
 //			primaryStage.getIcons().add(new Image("file:///D:/Programming/IP2/GerServCart/UFRPEIPIIReturn/project/src/application/iconeApp.png"));
 //			
-//		//	scene.getStylesheets().add("application.css");
+//			scene.getStylesheets().add("application.css");
 //			ScreenManager.getInstance().setPrimaryStage(primaryStage);
 //			primaryStage.setScene(scene);
 //			primaryStage.show();
@@ -74,7 +73,15 @@ public class Main extends Application {
 	case "monitor":
 		stage.setScene(ScreenManager.getInstance().getMonitor());
 		break;
-		
+	case "consulta":
+		stage.setScene(ScreenManager.getInstance().getConsultaProcessos());
+		break;
+	case "gerenciamentoG":
+		stage.setScene(ScreenManager.getInstance().getGerenciamentoGuiche());
+		break;
+	case "relatorioA":
+		stage.setScene(ScreenManager.getInstance().getRelatorioAtendimentos());
+		break;
 		
 		}
 	}
