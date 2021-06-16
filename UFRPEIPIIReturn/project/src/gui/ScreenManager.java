@@ -32,6 +32,15 @@ public class ScreenManager {
 		private Scene monitor;
 	    private MonitorController monitorController;
 	    
+	    private Scene gerenciamentoGuiche;
+	    private TelaGerenciamentoGuichesController gerenciamentoGuicheController;
+	    
+	    private Scene consultaProcessos;
+	    private TelaConsultaProcessosController consultaProcessosController;
+	    
+	    private Scene relatorioAtendimentos;
+	    private TelaRelatorioAtendimentosController relatorioAtendimentosController;
+	    
 	
 		private ScreenManager() { 
 	        this.initialize(); 
@@ -58,13 +67,13 @@ public class ScreenManager {
 	            this.cadastroFuncionariosController = (TelaCadastroFuncionariosController) fxmlLoader.getController();
 	           
 	            fxmlLoader = new FXMLLoader();
-	            Parent atendimento = FXMLLoader.load(getClass().getResource("../gui/TelaAtendimento.fxml"));
-	            this.atendimento = new Scene(atendimento,500,500); 
+	            Parent atendimentoT = FXMLLoader.load(getClass().getResource("../gui/TelaAtendimento.fxml"));
+	            this.atendimento = new Scene(atendimentoT,500,500); 
 	            this.atendimentoController = (TelaAtendimentoController) fxmlLoader.getController();
 	            
 	            fxmlLoader = new FXMLLoader();
-	            Parent processos = FXMLLoader.load(getClass().getResource("../gui/TelaDeProcessos.fxml"));
-	            this.processos = new Scene(processos,500,500); 
+	            Parent processosT = FXMLLoader.load(getClass().getResource("../gui/TelaDeProcessos.fxml"));
+	            this.processos = new Scene(processosT,500,500); 
 	            this.processosController = (TelaDeProcessosController) fxmlLoader.getController();
 	            
 	            fxmlLoader = new FXMLLoader();
@@ -78,9 +87,24 @@ public class ScreenManager {
 	            this.manutencaoFuncionariosController = (TelaManutencaoFuncionariosController) fxmlLoader.getController();
 	            
 	            fxmlLoader = new FXMLLoader();
-	            Parent monitor = FXMLLoader.load(getClass().getResource("../gui/TelaManutencaoFuncionarios.fxml"));
-	            this.monitor = new Scene(monitor,500,500); 
+	            Parent monitorL = FXMLLoader.load(getClass().getResource("../gui/TelaManutencaoFuncionarios.fxml"));
+	            this.monitor = new Scene(monitorL,500,500); 
 	            this.monitorController = (MonitorController) fxmlLoader.getController();
+	        
+	            fxmlLoader = new FXMLLoader();
+	            Parent gerenciamentoGuiches = FXMLLoader.load(getClass().getResource("../gui/TelaGerenciamentoGuiches.fxml"));
+	            this.gerenciamentoGuiche = new Scene(gerenciamentoGuiches,500,500); 
+	            this.gerenciamentoGuicheController = (TelaGerenciamentoGuichesController) fxmlLoader.getController();
+	            
+	            fxmlLoader = new FXMLLoader();
+	            Parent consulta = FXMLLoader.load(getClass().getResource("../gui/TelaConsultaProcessos.fxml"));
+	            this.consultaProcessos = new Scene(consulta,500,500); 
+	            this.consultaProcessosController = (TelaConsultaProcessosController) fxmlLoader.getController();
+	            
+	            fxmlLoader = new FXMLLoader();
+	            Parent relatorioT = FXMLLoader.load(getClass().getResource("../gui/TelaRelatorioAtendimentos.fxml"));
+	            this.relatorioAtendimentos = new Scene(relatorioT,500,500); 
+	            this.relatorioAtendimentosController = (TelaRelatorioAtendimentosController) fxmlLoader.getController();
 	 
 	          
 	        } catch (IOException e) {
@@ -209,6 +233,54 @@ public class ScreenManager {
 
 		public void setMonitorController(MonitorController monitorController) {
 			this.monitorController = monitorController;
+		}
+
+		public Scene getGerenciamentoGuiche() {
+			return gerenciamentoGuiche;
+		}
+
+		public void setGerenciamentoGuiche(Scene gerenciamentoGuiche) {
+			this.gerenciamentoGuiche = gerenciamentoGuiche;
+		}
+
+		public TelaGerenciamentoGuichesController getGerenciamentoGuicheController() {
+			return gerenciamentoGuicheController;
+		}
+
+		public void setGerenciamentoGuicheController(TelaGerenciamentoGuichesController gerenciamentoGuicheController) {
+			this.gerenciamentoGuicheController = gerenciamentoGuicheController;
+		}
+
+		public Scene getConsultaProcessos() {
+			return consultaProcessos;
+		}
+
+		public void setConsultaProcessos(Scene consultaProcessos) {
+			this.consultaProcessos = consultaProcessos;
+		}
+
+		public TelaConsultaProcessosController getConsultaProcessosController() {
+			return consultaProcessosController;
+		}
+
+		public void setConsultaProcessosController(TelaConsultaProcessosController consultaProcessosController) {
+			this.consultaProcessosController = consultaProcessosController;
+		}
+
+		public Scene getRelatorioAtendimentos() {
+			return relatorioAtendimentos;
+		}
+
+		public void setRelatorioAtendimentos(Scene relatorioAtendimentos) {
+			this.relatorioAtendimentos = relatorioAtendimentos;
+		}
+
+		public TelaRelatorioAtendimentosController getRelatorioAtendimentosController() {
+			return relatorioAtendimentosController;
+		}
+
+		public void setRelatorioAtendimentosController(TelaRelatorioAtendimentosController relatorioAtendimentosController) {
+			this.relatorioAtendimentosController = relatorioAtendimentosController;
 		} 
 	    
 	
