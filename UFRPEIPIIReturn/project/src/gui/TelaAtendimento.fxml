@@ -65,10 +65,13 @@
                <menus>
                   <Menu mnemonicParsing="false" text="Exibir Tela">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Atendimento" />
-                        <MenuItem mnemonicParsing="false" text="Monitor" />
-                        <MenuItem mnemonicParsing="false" text="Painel Administrador" />
-                        <MenuItem mnemonicParsing="false" text="Processos" />
+                        <MenuItem fx:id="menuAtendimento" mnemonicParsing="false" onAction="#mudarAtendimento" text="Atendimento" />
+                        <MenuItem fx:id="menuMonitor" mnemonicParsing="false" onAction="#mudarMonitor" text="Monitor" />
+                        <MenuItem fx:id="menuPainelAdm" mnemonicParsing="false" onAction="#mudarPainelAdm" text="Painel Administrador" />
+                        <MenuItem fx:id="menuProcessos" mnemonicParsing="false" onAction="#mudarProcessos" text="Processos" />
+                        <MenuItem fx:id="menuGuiche" mnemonicParsing="false" onAction="#mudarGuiche" text="Gerenciamento Guichês" />
+                        <MenuItem fx:id="menuManutencao" mnemonicParsing="false" onAction="#mudarManutencao" text="Manutenção funcionários" />
+                        <MenuItem fx:id="menuRelatorio" mnemonicParsing="false" onAction="#mudarRelatorios" text="Relatório Atendimentos" />
                      </items>
                   </Menu>
                   <Menu mnemonicParsing="false" text="Ajuda">
@@ -78,7 +81,7 @@
                   </Menu>
                   <Menu mnemonicParsing="false" text="Sair">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Logout" />
+                        <MenuItem fx:id="menuLogout" mnemonicParsing="false" onAction="#mudarLogin" text="Logout" />
                         <MenuItem mnemonicParsing="false" text="Fechar" />
                      </items>
                   </Menu>
