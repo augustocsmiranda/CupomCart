@@ -46,6 +46,7 @@ public class Main extends Application {
 			
 	}
 	
+	
 	public void teste() {
 		
 	}
@@ -83,6 +84,10 @@ public class Main extends Application {
 		stage.setScene(ScreenManager.getInstance().getRelatorioAtendimentos());
 		break;
 	case "login":
+		stage.setScene(ScreenManager.getInstance().getMainScene());
+		break;
+	case "login2"
+			+ "":
 		stage.setScene(ScreenManager.getInstance().getMainScene());
 		break;
 		

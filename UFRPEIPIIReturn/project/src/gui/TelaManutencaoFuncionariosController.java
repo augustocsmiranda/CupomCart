@@ -26,6 +26,7 @@ public class TelaManutencaoFuncionariosController {
 	@FXML
 	private MenuItem menuLogout;
 	
+
 	
 	@FXML
 	public void mudarRelatorios() {
