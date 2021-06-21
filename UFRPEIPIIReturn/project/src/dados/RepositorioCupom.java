@@ -1,4 +1,4 @@
-package repositorios;
+package dados;
 
 
 import java.util.HashMap;
