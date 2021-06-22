@@ -1,10 +1,17 @@
 package gui;
 
 import application.Main;
-
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import model.Funcionario;
 
 public class TelaCadastroFuncionariosController {
 
@@ -24,6 +31,40 @@ public class TelaCadastroFuncionariosController {
 	private MenuItem menuGuiche;
 	@FXML
 	private MenuItem menuLogout;
+	
+	 
+    @FXML private TableView<Funcionario> tableFuncionarios;
+    private TableColumn<Funcionario, String> columnNome = new TableColumn<Funcionario, String>("Nome");
+    private TableColumn<Funcionario, String> columnCPF = new TableColumn<Funcionario, String>("CPF");
+    private TableColumn<Funcionario, String> columnFuncao = new TableColumn<Funcionario, String>("Função");
+    
+    @SuppressWarnings("unchecked")
+	@FXML
+    public void initialize() {
+        columnNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        columnCPF.setCellValueFactory(new PropertyValueFactory<>("cpf"));
+        columnFuncao.setCellValueFactory(new PropertyValueFactory<>("funcao"));  
+        columnNome.setPrefWidth(200);
+        columnCPF.setPrefWidth(150);
+        columnFuncao.setPrefWidth(150);
+    	this.atualizarListagemdeFuncionarios();
+    	
+    }
+
+	
+	public void atualizarListagemdeFuncionarios() {
+		ObservableList<Funcionario> listaFuncionarios = FXCollections.observableArrayList();
+        listaFuncionarios.addAll(); 
+		this.tableFuncionarios.setItems(listaFuncionarios);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	@FXML

@@ -1,10 +1,16 @@
 package gui;
 
 import application.Main;
-
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import model.Funcionario;
 
 public class TelaManutencaoFuncionariosController {
 
@@ -25,6 +31,30 @@ public class TelaManutencaoFuncionariosController {
 	private MenuItem menuGuiche;
 	@FXML
 	private MenuItem menuLogout;
+	@FXML
+	private Button BTNEditarFuncionario;
+	
+	 @FXML
+	 private TableView<Funcionario> tableFuncionarios;
+     private TableColumn<Funcionario, String> columnNome = new TableColumn<Funcionario, String>("Nome");
+     private TableColumn<Funcionario, String> columnCPF = new TableColumn<Funcionario, String>("CPF");
+     private TableColumn<Funcionario, String> columnFuncao = new TableColumn<Funcionario, String>("Função");
+    
+    ObservableList<Funcionario> listaFuncionarios = FXCollections.observableArrayList();
+	    
+	
+	 @FXML
+	 public void BTNEditarFuncionario(ActionEvent event) {
+		
+    	if (tableFuncionarios.getSelectionModel().isEmpty()) {
+			Alert branco = new Alert(Alert.AlertType.ERROR);
+			branco.setTitle("Erro");
+			branco.setHeaderText("Selecione um funcionário para poder edita-lo.");
+			branco.show();
+		} 
+	}
+	    
+
 	
 	
 	@FXML

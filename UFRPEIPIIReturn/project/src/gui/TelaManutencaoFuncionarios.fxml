@@ -15,13 +15,12 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <ListView layoutX="22.0" layoutY="135.0" prefHeight="345.0" prefWidth="339.0" />
             <Label layoutX="22.0" layoutY="103.0" text="Listagem de funcionário:s">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button layoutX="377.0" layoutY="135.0" mnemonicParsing="false" text="Editar" />
+            <Button fx:id="BTNEditarFuncionario" layoutX="377.0" layoutY="135.0" mnemonicParsing="false" onAction="#BTNEditarFuncionario" onMouseClicked="#BTNEditarFuncionario" text="Editar" />
             <Button layoutX="377.0" layoutY="174.0" mnemonicParsing="false" text="Remover" />
             <Button layoutX="377.0" layoutY="214.0" mnemonicParsing="false" text="Cadastrar" />
             <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="500.0">
@@ -50,6 +49,7 @@
                   </Menu>
                </menus>
             </MenuBar>
+            <TableView fx:id="tableFuncionarios" layoutY="135.0" prefHeight="364.0" prefWidth="358.0" />
          </children>
       </Pane>
    </children>

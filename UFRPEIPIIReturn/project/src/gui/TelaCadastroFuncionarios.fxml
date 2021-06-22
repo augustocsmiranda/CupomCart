@@ -26,11 +26,17 @@
             <TextField layoutX="62.0" layoutY="223.0" />
             <Label layoutX="289.0" layoutY="227.0" text="Senha:" />
             <Label layoutX="23.0" layoutY="227.0" text="Login:" />
-            <Button layoutX="217.0" layoutY="287.0" mnemonicParsing="false" text="Cadastrar" />
+            <Button layoutX="217.0" layoutY="277.0" mnemonicParsing="false" text="Cadastrar" />
             <DatePicker layoutX="376.0" layoutY="134.0" prefHeight="25.0" prefWidth="110.0" />
             <ScrollPane layoutY="318.0" prefHeight="182.0" prefWidth="500.0">
                <content>
-                  <ListView prefHeight="180.0" prefWidth="498.0" />
+                  <TableView fx:id="tableFuncionarios" prefHeight="180.0" prefWidth="498.0">
+                     <columns>
+                        <TableColumn prefWidth="200.0" text="Nome" />
+                        <TableColumn prefWidth="150.0" text="CPF" />
+                        <TableColumn prefWidth="150.0" text="Função" />
+                     </columns>
+                  </TableView>
                </content>
             </ScrollPane>
             <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="500.0">
