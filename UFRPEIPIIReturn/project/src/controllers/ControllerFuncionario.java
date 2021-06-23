@@ -11,7 +11,7 @@ public class ControllerFuncionario {
 	private IRepositorioGenerico<Funcionario> repositorioFuncionarios;
 	private static ControllerFuncionario instance;
 	
-	private ControllerFuncionario() {
+	public ControllerFuncionario() {
 		this.repositorioFuncionarios = new RepositorioGenerico<>();
 	}
 
