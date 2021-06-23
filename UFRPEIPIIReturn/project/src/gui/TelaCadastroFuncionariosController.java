@@ -1,14 +1,19 @@
 package gui;
 
 
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
+
 import application.Main;
 import controllers.ControllerFuncionario;
+import excecoes.CampoInvalidoException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -43,20 +48,20 @@ public class TelaCadastroFuncionariosController {
 	@FXML
 	private TextField txtFuncao;
 	@FXML
+	private DatePicker dpDataNascimento;
+	@FXML
 	private TextField txtLogin;
 	@FXML
 	private TextField txtSenha;
 	@FXML
 	private Button btnCadastrarFuncionario;
 	
-	private ControllerFuncionario controllerFuncionario = new ControllerFuncionario();
-	
-	
-	 
     @FXML private TableView<Funcionario> tableFuncionarios;
     @FXML private TableColumn<Funcionario, String> columnNome;
     @FXML private TableColumn<Funcionario, String> columnCPF;
     @FXML private TableColumn<Funcionario, String> columnFuncao;
+    
+    private ControllerFuncionario controllerFuncionario = new ControllerFuncionario();
     
     @FXML
     public void initialize() {
@@ -80,30 +85,25 @@ public class TelaCadastroFuncionariosController {
 	@FXML
 	public void btnCadastrarFuncionario() throws Exception {
 		Funcionario funcionario;
+		funcionario = new Administrador();
 		
-		if(txtFuncao.toString().toLowerCase().equals("atendente")) {
-			funcionario = new Atendente();
-		}else funcionario = new Administrador();		
-		
+//		if(txtFuncao.toString().toLowerCase().equals("atendente")) {
+//			funcionario = new Atendente();
+//		}else if (txtFuncao.toString().toLowerCase().equals("administrador")) funcionario = new Administrador();
+//		
+//		else throw new CampoInvalidoException("'Função'");
 		funcionario.setNome(this.txtNome.getText());
 		funcionario.setCpf(this.txtCPF.getText());
 		funcionario.setFuncao(this.txtFuncao.getText());
 		funcionario.setLogin(this.txtLogin.getText());
 		funcionario.setSenha(this.txtSenha.getText());
-		//funcionario.setDataNascimento(this.txtSenha.getText());
+		funcionario.setDataNascimento(LocalDate.of(this.dpDataNascimento.getValue().getYear(), this.dpDataNascimento.getValue().getMonthValue(), this.dpDataNascimento.getValue().getDayOfMonth()));
 		controllerFuncionario.salvar(funcionario);
 		System.out.println("Pressionado");
     	this.atualizarListagemdeFuncionarios();
 	}
 	
 
-	
-	
-	
-	
-	
-	
-	
 	@FXML
 	public void mudarRelatorios() {
 		Main.mudarTela("relatorioA");
