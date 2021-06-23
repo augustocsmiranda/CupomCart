@@ -1,16 +1,26 @@
 package gui;
 
+
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
+
 import application.Main;
+import controllers.ControllerFuncionario;
+import excecoes.CampoInvalidoException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import model.Administrador;
+import model.Atendente;
 import model.Funcionario;
 
 public class TelaCadastroFuncionariosController {
@@ -31,15 +41,29 @@ public class TelaCadastroFuncionariosController {
 	private MenuItem menuGuiche;
 	@FXML
 	private MenuItem menuLogout;
-	
-	 
-    @FXML private TableView<Funcionario> tableFuncionarios;
-    private TableColumn<Funcionario, String> columnNome = new TableColumn<Funcionario, String>("Nome");
-    private TableColumn<Funcionario, String> columnCPF = new TableColumn<Funcionario, String>("CPF");
-    private TableColumn<Funcionario, String> columnFuncao = new TableColumn<Funcionario, String>("Função");
-    
-    @SuppressWarnings("unchecked")
+	@FXML 
+	private TextField txtCPF;
 	@FXML
+	private TextField txtNome;
+	@FXML
+	private TextField txtFuncao;
+	@FXML
+	private DatePicker dpDataNascimento;
+	@FXML
+	private TextField txtLogin;
+	@FXML
+	private TextField txtSenha;
+	@FXML
+	private Button btnCadastrarFuncionario;
+	
+    @FXML private TableView<Funcionario> tableFuncionarios;
+    @FXML private TableColumn<Funcionario, String> columnNome;
+    @FXML private TableColumn<Funcionario, String> columnCPF;
+    @FXML private TableColumn<Funcionario, String> columnFuncao;
+    
+    private ControllerFuncionario controllerFuncionario = new ControllerFuncionario();
+    
+    @FXML
     public void initialize() {
         columnNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         columnCPF.setCellValueFactory(new PropertyValueFactory<>("cpf"));
@@ -48,25 +72,38 @@ public class TelaCadastroFuncionariosController {
         columnCPF.setPrefWidth(150);
         columnFuncao.setPrefWidth(150);
     	this.atualizarListagemdeFuncionarios();
-    	
     }
 
 	
 	public void atualizarListagemdeFuncionarios() {
 		ObservableList<Funcionario> listaFuncionarios = FXCollections.observableArrayList();
-        listaFuncionarios.addAll(); 
+        listaFuncionarios.addAll(controllerFuncionario.listar()); 
 		this.tableFuncionarios.setItems(listaFuncionarios);
+		System.out.println(listaFuncionarios.toString());
 	}
 	
+	@FXML
+	public void btnCadastrarFuncionario() throws Exception {
+		Funcionario funcionario;
+		funcionario = new Administrador();
+		
+//		if(txtFuncao.toString().toLowerCase().equals("atendente")) {
+//			funcionario = new Atendente();
+//		}else if (txtFuncao.toString().toLowerCase().equals("administrador")) funcionario = new Administrador();
+//		
+//		else throw new CampoInvalidoException("'Função'");
+		funcionario.setNome(this.txtNome.getText());
+		funcionario.setCpf(this.txtCPF.getText());
+		funcionario.setFuncao(this.txtFuncao.getText());
+		funcionario.setLogin(this.txtLogin.getText());
+		funcionario.setSenha(this.txtSenha.getText());
+		funcionario.setDataNascimento(LocalDate.of(this.dpDataNascimento.getValue().getYear(), this.dpDataNascimento.getValue().getMonthValue(), this.dpDataNascimento.getValue().getDayOfMonth()));
+		controllerFuncionario.salvar(funcionario);
+		System.out.println("Pressionado");
+    	this.atualizarListagemdeFuncionarios();
+	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	@FXML
 	public void mudarRelatorios() {
 		Main.mudarTela("relatorioA");
