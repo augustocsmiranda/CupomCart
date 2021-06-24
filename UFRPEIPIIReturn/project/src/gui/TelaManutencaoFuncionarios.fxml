@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
@@ -15,14 +16,14 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutX="22.0" layoutY="103.0" text="Listagem de funcionário:s">
+            <Label layoutX="22.0" layoutY="103.0" text="Listagem de funcionários:">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button fx:id="BTNEditarFuncionario" layoutX="377.0" layoutY="135.0" mnemonicParsing="false" onAction="#BTNEditarFuncionario" onMouseClicked="#BTNEditarFuncionario" text="Editar" />
-            <Button layoutX="377.0" layoutY="174.0" mnemonicParsing="false" text="Remover" />
-            <Button layoutX="377.0" layoutY="214.0" mnemonicParsing="false" text="Cadastrar" />
+            <Button layoutX="419.0" layoutY="135.0" mnemonicParsing="false" text="Editar" />
+            <Button layoutX="419.0" layoutY="174.0" mnemonicParsing="false" text="Remover" />
+            <Button fx:id="btnCadastrarFuncionario" layoutX="419.0" layoutY="214.0" mnemonicParsing="false" onAction="#btnCadastrarFuncionario" text="Cadastrar" />
             <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="500.0">
                <menus>
                   <Menu mnemonicParsing="false" text="Exibir Tela">
@@ -49,7 +50,12 @@
                   </Menu>
                </menus>
             </MenuBar>
-            <TableView fx:id="tableFuncionarios" layoutY="135.0" prefHeight="364.0" prefWidth="358.0" />
+            <TableView fx:id="tableManutencaoFuncionarios" layoutY="135.0" prefHeight="364.0" prefWidth="403.0">
+               <columns>
+                  <TableColumn fx:id="columnNome" prefWidth="159.0" text="Nome" />
+                  <TableColumn fx:id="columnCPF" minWidth="3.0" prefWidth="115.0" text="CPF" />
+                  <TableColumn fx:id="columnDataNascimento" prefWidth="135.0" resizable="false" text="Data de Nascimento" />
+               </columns></TableView>
          </children>
       </Pane>
    </children>
