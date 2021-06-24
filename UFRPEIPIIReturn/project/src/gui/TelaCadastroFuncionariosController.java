@@ -86,7 +86,7 @@ public class TelaCadastroFuncionariosController {
 	public void btnCadastrarFuncionario() throws Exception {
 		Funcionario funcionario;
 		funcionario = new Administrador();
-		
+	
 //		if(txtFuncao.toString().toLowerCase().equals("atendente")) {
 //			funcionario = new Atendente();
 //		}else if (txtFuncao.toString().toLowerCase().equals("administrador")) funcionario = new Administrador();
@@ -97,7 +97,7 @@ public class TelaCadastroFuncionariosController {
 		funcionario.setFuncao(this.txtFuncao.getText());
 		funcionario.setLogin(this.txtLogin.getText());
 		funcionario.setSenha(this.txtSenha.getText());
-		funcionario.setDataNascimento(LocalDate.of(this.dpDataNascimento.getValue().getYear(), this.dpDataNascimento.getValue().getMonthValue(), this.dpDataNascimento.getValue().getDayOfMonth()));
+     	funcionario.setDataNascimento(LocalDate.of(this.dpDataNascimento.getValue().getYear(), this.dpDataNascimento.getValue().getMonthValue(), this.dpDataNascimento.getValue().getDayOfMonth()));
 		controllerFuncionario.salvar(funcionario);
 		System.out.println("Pressionado");
     	this.atualizarListagemdeFuncionarios();

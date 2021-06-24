@@ -27,7 +27,7 @@
             <Label layoutX="289.0" layoutY="227.0" text="Senha:" />
             <Label layoutX="23.0" layoutY="227.0" text="Login:" />
             <Button fx:id="btnCadastrarFuncionario" layoutX="217.0" layoutY="277.0" mnemonicParsing="false" onAction="#btnCadastrarFuncionario" text="Cadastrar" />
-            <DatePicker fx:id="dpDanaNascimento" layoutX="376.0" layoutY="134.0" prefHeight="25.0" prefWidth="110.0" />
+            <DatePicker fx:id="dpDataNascimento" layoutX="376.0" layoutY="134.0" prefHeight="25.0" prefWidth="110.0" />
             <ScrollPane layoutY="318.0" prefHeight="182.0" prefWidth="500.0">
                <content>
                   <TableView fx:id="tableFuncionarios" prefHeight="180.0" prefWidth="498.0">

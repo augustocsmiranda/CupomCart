@@ -1,15 +1,18 @@
 package gui;
 
+import java.time.LocalDate;
+
 import application.Main;
+import controllers.ControllerFuncionario;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import model.Administrador;
 import model.Funcionario;
 
 public class TelaManutencaoFuncionariosController {
@@ -32,30 +35,47 @@ public class TelaManutencaoFuncionariosController {
 	@FXML
 	private MenuItem menuLogout;
 	@FXML
-	private Button BTNEditarFuncionario;
+	private Button btnCadastrarFuncionario;
 	
-	 @FXML
-	 private TableView<Funcionario> tableFuncionarios;
-     private TableColumn<Funcionario, String> columnNome = new TableColumn<Funcionario, String>("Nome");
-     private TableColumn<Funcionario, String> columnCPF = new TableColumn<Funcionario, String>("CPF");
-     private TableColumn<Funcionario, String> columnFuncao = new TableColumn<Funcionario, String>("Função");
+    @FXML private TableView<Funcionario> tableManutencaoFuncionarios = new TableView<Funcionario>();
+    @FXML private TableColumn<Funcionario, String> columnNome;
+    @FXML private TableColumn<Funcionario, String> columnCPF;
+    @FXML private TableColumn<Funcionario, LocalDate> columnDataNascimento;
     
-    ObservableList<Funcionario> listaFuncionarios = FXCollections.observableArrayList();
-	    
+    private ControllerFuncionario controllerFuncionario = new ControllerFuncionario();
+    
+    @FXML
+    public void initialize() throws Exception {
+//    	Funcionario funcionario = new Administrador();
+//		funcionario.setNome("Maike");
+//		funcionario.setCpf("12345678987");
+//		funcionario.setFuncao("Administreador");
+//		funcionario.setLogin("maike123");
+//		funcionario.setSenha("123456");
+//     	funcionario.setDataNascimento(LocalDate.of(1996,02,06));
+//		controllerFuncionario.salvar(funcionario);
 	
-	 @FXML
-	 public void BTNEditarFuncionario(ActionEvent event) {
-		
-    	if (tableFuncionarios.getSelectionModel().isEmpty()) {
-			Alert branco = new Alert(Alert.AlertType.ERROR);
-			branco.setTitle("Erro");
-			branco.setHeaderText("Selecione um funcionário para poder edita-lo.");
-			branco.show();
-		} 
-	}
-	    
+        columnNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        columnCPF.setCellValueFactory(new PropertyValueFactory<>("cpf"));
+        columnDataNascimento.setCellValueFactory(new PropertyValueFactory<>("dataNascimento"));  
+        columnNome.setPrefWidth(159);
+        columnCPF.setPrefWidth(115);
+        columnDataNascimento.setPrefWidth(135);
+    	this.atualizarListagemdeFuncionarios();
+    }
 
 	
+	public void atualizarListagemdeFuncionarios() {
+		ObservableList<Funcionario> listaManutencaoFuncionarios = FXCollections.observableArrayList();
+		listaManutencaoFuncionarios.addAll(controllerFuncionario.listar()); 
+		this.tableManutencaoFuncionarios.setItems(listaManutencaoFuncionarios);
+		System.out.println(listaManutencaoFuncionarios.toString());
+	}
+	
+	@FXML
+	public void btnCadastrarFuncionario() throws Exception {
+		Main.mudarTela("cadastro");
+	}
 	
 	@FXML
 	public void mudarRelatorios() {
