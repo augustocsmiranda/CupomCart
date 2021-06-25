@@ -40,7 +40,6 @@
             <Menu mnemonicParsing="false" text="Sair">
                <items>
                   <MenuItem fx:id="menuLogout" mnemonicParsing="false" onAction="#mudarLogin" text="Logout" />
-                  <MenuItem mnemonicParsing="false" text="Fechar" />
                </items>
             </Menu>
          </menus>
