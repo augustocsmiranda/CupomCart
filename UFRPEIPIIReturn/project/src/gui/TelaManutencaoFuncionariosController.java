@@ -1,6 +1,7 @@
 package gui;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import application.Main;
 import controllers.ControllerFuncionario;
@@ -36,24 +37,25 @@ public class TelaManutencaoFuncionariosController {
 	private MenuItem menuLogout;
 	@FXML
 	private Button btnCadastrarFuncionario;
+	@FXML
+	private Button atualizarListagemdeFuncionarios;
 	
     @FXML private TableView<Funcionario> tableManutencaoFuncionarios = new TableView<Funcionario>();
-    @FXML private TableColumn<Funcionario, String> columnNome;
+	@FXML private TableColumn<Funcionario, String> columnNome;
     @FXML private TableColumn<Funcionario, String> columnCPF;
     @FXML private TableColumn<Funcionario, LocalDate> columnDataNascimento;
     
-    private ControllerFuncionario controllerFuncionario = new ControllerFuncionario();
     
     @FXML
     public void initialize() throws Exception {
-//    	Funcionario funcionario = new Administrador();
-//		funcionario.setNome("Maike");
-//		funcionario.setCpf("12345678987");
-//		funcionario.setFuncao("Administreador");
-//		funcionario.setLogin("maike123");
-//		funcionario.setSenha("123456");
-//     	funcionario.setDataNascimento(LocalDate.of(1996,02,06));
-//		controllerFuncionario.salvar(funcionario);
+    	Funcionario funcionario = new Administrador();
+		funcionario.setNome("Maike");		
+		funcionario.setCpf("12345678987");
+		funcionario.setFuncao("Administreador");
+	    funcionario.setLogin("maike123");
+		funcionario.setSenha("123456");
+    	funcionario.setDataNascimento(LocalDate.of(1996,02,06));
+    	TelaCadastroFuncionariosController.controllerFuncionario.salvar(funcionario);
 	
         columnNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         columnCPF.setCellValueFactory(new PropertyValueFactory<>("cpf"));
@@ -64,14 +66,14 @@ public class TelaManutencaoFuncionariosController {
     	this.atualizarListagemdeFuncionarios();
     }
 
-	
+	@FXML
 	public void atualizarListagemdeFuncionarios() {
 		ObservableList<Funcionario> listaManutencaoFuncionarios = FXCollections.observableArrayList();
-		listaManutencaoFuncionarios.addAll(controllerFuncionario.listar()); 
-		this.tableManutencaoFuncionarios.setItems(listaManutencaoFuncionarios);
-		System.out.println(listaManutencaoFuncionarios.toString());
+		listaManutencaoFuncionarios.addAll(TelaCadastroFuncionariosController.controllerFuncionario.listar()); 
+		tableManutencaoFuncionarios.setItems(listaManutencaoFuncionarios);
+		System.out.println("Listagem sendo atualizada");
 	}
-	
+
 	@FXML
 	public void btnCadastrarFuncionario() throws Exception {
 		Main.mudarTela("cadastro");
@@ -109,5 +111,5 @@ public class TelaManutencaoFuncionariosController {
 	public void mudarLogin() {
 		Main.mudarTela("login");
 	}
-	
+
 }

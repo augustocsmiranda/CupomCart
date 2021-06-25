@@ -1,6 +1,7 @@
 package dados;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,7 +26,7 @@ public class RepositorioGenerico<T> implements IRepositorioGenerico<T> {
 
 	@Override
 	public List<T> listar() {
-		return this.elementos;
+		return Collections.unmodifiableList(this.elementos);
 	}
 
 	@Override

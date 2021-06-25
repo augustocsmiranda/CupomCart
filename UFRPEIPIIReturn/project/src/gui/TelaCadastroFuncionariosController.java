@@ -61,7 +61,7 @@ public class TelaCadastroFuncionariosController {
     @FXML private TableColumn<Funcionario, String> columnCPF;
     @FXML private TableColumn<Funcionario, String> columnFuncao;
     
-    private ControllerFuncionario controllerFuncionario = new ControllerFuncionario();
+    public static ControllerFuncionario controllerFuncionario = new ControllerFuncionario();
     
     @FXML
     public void initialize() {
@@ -78,7 +78,7 @@ public class TelaCadastroFuncionariosController {
 	public void atualizarListagemdeFuncionarios() {
 		ObservableList<Funcionario> listaFuncionarios = FXCollections.observableArrayList();
         listaFuncionarios.addAll(controllerFuncionario.listar()); 
-		this.tableFuncionarios.setItems(listaFuncionarios);
+		tableFuncionarios.setItems(listaFuncionarios);
 		System.out.println(listaFuncionarios.toString());
 	}
 	
