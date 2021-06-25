@@ -56,6 +56,7 @@
                   <TableColumn fx:id="columnCPF" minWidth="3.0" prefWidth="115.0" text="CPF" />
                   <TableColumn fx:id="columnDataNascimento" prefWidth="135.0" resizable="false" text="Data de Nascimento" />
                </columns></TableView>
+            <Button fx:id="atualizarListagemdeFuncionarios" layoutX="419.0" layoutY="250.0" mnemonicParsing="false" onAction="#atualizarListagemdeFuncionarios" text="Atualizar" />
          </children>
       </Pane>
    </children>
