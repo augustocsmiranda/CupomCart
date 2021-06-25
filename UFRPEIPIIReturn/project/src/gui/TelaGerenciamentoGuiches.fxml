@@ -36,11 +36,21 @@
                   </Menu>
                </menus>
             </MenuBar>
-            <Label layoutX="122.0" layoutY="69.0" prefHeight="68.0" prefWidth="257.0" text="Tela de gerenciamento de guichês" textAlignment="CENTER" wrapText="true">
+            <Label layoutX="122.0" layoutY="52.0" prefHeight="68.0" prefWidth="257.0" text="Tela de gerenciamento de guichês" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
+            <TableView layoutX="-1.0" layoutY="151.0" prefHeight="350.0" prefWidth="385.0">
+              <columns>
+                <TableColumn prefWidth="67.0" text="ID" />
+                <TableColumn prefWidth="122.0" text="Status" />
+                  <TableColumn prefWidth="195.0" text="Atendente responsável" />
+              </columns>
+            </TableView>
+            <Button layoutX="414.0" layoutY="151.0" mnemonicParsing="false" text="Adicionar" />
+            <Button layoutX="414.0" layoutY="229.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="73.0" text="Designar atendente" textAlignment="CENTER" wrapText="true" />
+            <Button layoutX="414.0" layoutY="191.0" mnemonicParsing="false" text="Fechar" />
          </children></Pane>
    </children>
 </AnchorPane>
