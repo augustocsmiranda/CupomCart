@@ -11,7 +11,7 @@ public class ControllerProcesso {
 	private IRepositorioGenerico<Processo> repositorioProcesso;
 	private static ControllerProcesso instance;
 	
-	private ControllerProcesso() {
+	public ControllerProcesso() {
 		this.repositorioProcesso = new RepositorioGenerico<>();
 	}
 
@@ -34,6 +34,11 @@ public class ControllerProcesso {
 	
 	public void update(Processo processo) throws Exception {
 		repositorioProcesso.update(processo);
+	}
+
+	public void exibirListaPersonalizada() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	
