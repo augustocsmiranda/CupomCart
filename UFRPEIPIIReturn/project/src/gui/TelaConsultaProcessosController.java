@@ -43,9 +43,7 @@ public class TelaConsultaProcessosController {
 	@FXML
 	private DatePicker dpSegundaData;
 	
-	
-	
-	@FXML private TableView<Processo> tableProcessos;
+	@FXML private TableView<Processo> tableProcessos = new TableView<Processo>();
     @FXML private TableColumn<Processo, String> columnId;
     @FXML private TableColumn<Processo, String> columnCliente;
     @FXML private TableColumn<Processo, String> columnTipo;
@@ -61,6 +59,12 @@ public class TelaConsultaProcessosController {
     	columnTipo.setCellValueFactory(new PropertyValueFactory<>("tipo"));  
     	columnDataAbertura.setCellValueFactory(new PropertyValueFactory<>("dataAbertura"));  
     	columnStatus.setCellValueFactory(new PropertyValueFactory<>("status"));  
+    	columnId.setPrefWidth(66);
+        columnCliente.setPrefWidth(122);
+        columnTipo.setPrefWidth(81);
+        columnDataAbertura.setPrefWidth(177);
+        columnStatus.setPrefWidth(113);
+        
     	this.atualizarConsultaProcessos(controllerProcesso.listar());
     }
 	
