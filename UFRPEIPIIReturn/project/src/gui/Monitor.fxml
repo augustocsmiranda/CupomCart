@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.web.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
+<?import javafx.scene.media.*?>
 <?import java.lang.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MonitorController">
    <children>
       <Pane prefHeight="500.0" prefWidth="500.0">
          <children>
-            <Label alignment="CENTER" layoutX="68.0" layoutY="51.0" prefHeight="64.0" prefWidth="365.0" text="Tela de geração e informações de chamadas de cupons" textAlignment="CENTER" wrapText="true">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
             <MenuBar layoutX="1.0" layoutY="2.0" prefHeight="25.0" prefWidth="500.0">
                <menus>
                   <Menu mnemonicParsing="false" text="Exibir Tela">
@@ -41,6 +35,51 @@
                   </Menu>
                </menus>
             </MenuBar>
+            <Label alignment="CENTER" layoutX="68.0" layoutY="51.0" prefHeight="64.0" prefWidth="365.0" text="Monitor" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <Label fx:id="exibirCupomAtual" alignment="CENTER" layoutX="57.0" layoutY="165.0" prefHeight="134.0" prefWidth="150.0" style="-fx-border-color: black; -fx-border-radius: 10px;" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="46.0" />
+               </font>
+            </Label>
+            <Label fx:id="exibiirUltimo" alignment="CENTER" layoutX="23.0" layoutY="379.0" prefHeight="100.0" prefWidth="122.0" style="-fx-border-color: black; -fx-border-radius: 10px;" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="106.0" layoutY="128.0" text="Cupom:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="23.0" layoutY="342.0" text="Cupons chamados:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="exibirPenultimo" alignment="CENTER" layoutX="187.0" layoutY="379.0" prefHeight="100.0" prefWidth="122.0" style="-fx-border-color: black; -fx-border-radius: 10px;" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <Label fx:id="exibirAntePenultimo" alignment="CENTER" layoutX="351.0" layoutY="379.0" prefHeight="100.0" prefWidth="122.0" style="-fx-border-color: black; -fx-border-radius: 10px;" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <Label fx:id="exibirGuicheAtual" alignment="CENTER" layoutX="296.0" layoutY="165.0" prefHeight="134.0" prefWidth="150.0" style="-fx-border-color: black; -fx-border-radius: 10px;" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="46.0" />
+               </font>
+            </Label>
+            <Label layoutX="343.0" layoutY="128.0" text="Guichê:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>

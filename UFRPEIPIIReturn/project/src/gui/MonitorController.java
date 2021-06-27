@@ -3,7 +3,7 @@ package gui;
 import application.Main;
 
 import javafx.fxml.FXML;
-
+import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 
 public class MonitorController {
@@ -26,6 +26,19 @@ public class MonitorController {
 	private MenuItem menuGuiche;
 	@FXML
 	private MenuItem menuLogout;
+	@FXML
+	private Label exibirCupomAtual;
+	@FXML
+	private Label exibirGuicheAtual;
+	@FXML
+	private Label exibitUltimo;
+	@FXML
+	private Label exibirPenultimo;
+	@FXML
+	private Label exibitAntePenultimo;
+	
+	
+	
 	
 	
 

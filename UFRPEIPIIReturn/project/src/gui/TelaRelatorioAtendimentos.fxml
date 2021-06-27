@@ -4,7 +4,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.TelaRelatorioAtendimentosController">
    <children>
@@ -41,6 +40,31 @@
                   </Menu>
                </menus>
             </MenuBar>
+            <ScrollPane layoutY="241.0" prefHeight="262.0" prefWidth="503.0">
+               <content>
+                  <TableView editable="true" prefHeight="260.0" prefWidth="501.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="Cupom" />
+                      <TableColumn prefWidth="196.0" text="Atendente" />
+                        <TableColumn prefWidth="115.0" text="Tipo" />
+                        <TableColumn prefWidth="114.0" text="Data" />
+                    </columns>
+                  </TableView>
+               </content>
+            </ScrollPane>
+            <Button fx:id="dadosASeremExibidos" layoutX="226.0" layoutY="191.0" mnemonicParsing="false" text="Consultar" />
+            <Label layoutX="283.0" layoutY="139.0" text="à">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="dpSegundaData" layoutX="306.0" layoutY="135.0" prefHeight="25.0" prefWidth="154.0" />
+            <DatePicker fx:id="dpPrimeiraData" layoutX="109.0" layoutY="135.0" prefHeight="25.0" prefWidth="154.0" />
+            <Label layoutX="44.0" layoutY="139.0" text="Periodo:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>

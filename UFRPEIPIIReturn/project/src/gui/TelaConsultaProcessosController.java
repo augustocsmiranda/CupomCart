@@ -8,6 +8,7 @@ import controllers.ControllerProcesso;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
@@ -42,6 +43,8 @@ public class TelaConsultaProcessosController {
 	private DatePicker dpPrimeiraData;
 	@FXML
 	private DatePicker dpSegundaData;
+	@FXML
+	private Button dadosASeremExibidos;
 	
 	@FXML private TableView<Processo> tableProcessos = new TableView<Processo>();
     @FXML private TableColumn<Processo, String> columnId;
@@ -65,7 +68,6 @@ public class TelaConsultaProcessosController {
         columnDataAbertura.setPrefWidth(177);
         columnStatus.setPrefWidth(113);
         
-    	this.atualizarConsultaProcessos(controllerProcesso.listar());
     }
 	
     public void atualizarConsultaProcessos(List<Processo> lista) {
@@ -75,9 +77,9 @@ public class TelaConsultaProcessosController {
 		System.out.println(tableProcessos.toString());
 	}
 	
-    
-   public void dadosASeremExibidos(String string) {
-	   controllerProcesso.exibirListaPersonalizada();
+   @FXML
+   public List<Processo> dadosASeremExibidos() {
+	   return controllerProcesso.exibirListaPersonalizada();
    }
 	
 	

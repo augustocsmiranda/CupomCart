@@ -36,7 +36,8 @@ public class ControllerProcesso {
 		repositorioProcesso.update(processo);
 	}
 
-	public void exibirListaPersonalizada() {
+	public List<Processo> exibirListaPersonalizada() {
+		return null;
 		// TODO Auto-generated method stub
 		
 	}
