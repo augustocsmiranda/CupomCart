@@ -18,6 +18,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.Administrador;
 import model.Atendente;
@@ -41,6 +42,8 @@ public class TelaCadastroFuncionariosController {
 	private MenuItem menuGuiche;
 	@FXML
 	private MenuItem menuLogout;
+	@FXML
+	private MenuItem exibirDescricao;
 	@FXML 
 	private TextField txtCPF;
 	@FXML
@@ -135,6 +138,13 @@ public class TelaCadastroFuncionariosController {
 	@FXML
 	public void mudarLogin() {
 		Main.mudarTela("login");
+	}
+	public void exibirDescricao() {
+		Alert popup = new Alert(AlertType.INFORMATION);
+		popup.setHeaderText("");
+		popup.setTitle("Descrição do monitor");
+		popup.setContentText("Local onde o cadastro de novos funcionários será feito. Uma tebela na parte inferior da tela exibirá os funcionários recentemente adicionados ao sistema.");
+		popup.show();
 	}
 	
 }

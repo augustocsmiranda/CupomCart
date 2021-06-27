@@ -8,11 +8,14 @@ import controllers.ControllerProcesso;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.Processo;
 
@@ -35,6 +38,8 @@ public class TelaConsultaProcessosController {
 	@FXML
 	private MenuItem menuLogout;
 	@FXML
+	private MenuItem exibirDescricao;
+	@FXML
 	private TextField txtId;
 	@FXML
 	private TextField txtCliente;
@@ -42,6 +47,8 @@ public class TelaConsultaProcessosController {
 	private DatePicker dpPrimeiraData;
 	@FXML
 	private DatePicker dpSegundaData;
+	@FXML
+	private Button dadosASeremExibidos;
 	
 	@FXML private TableView<Processo> tableProcessos = new TableView<Processo>();
     @FXML private TableColumn<Processo, String> columnId;
@@ -65,7 +72,6 @@ public class TelaConsultaProcessosController {
         columnDataAbertura.setPrefWidth(177);
         columnStatus.setPrefWidth(113);
         
-    	this.atualizarConsultaProcessos(controllerProcesso.listar());
     }
 	
     public void atualizarConsultaProcessos(List<Processo> lista) {
@@ -75,9 +81,9 @@ public class TelaConsultaProcessosController {
 		System.out.println(tableProcessos.toString());
 	}
 	
-    
-   public void dadosASeremExibidos(String string) {
-	   controllerProcesso.exibirListaPersonalizada();
+   @FXML
+   public List<Processo> dadosASeremExibidos() {
+	   return controllerProcesso.exibirListaPersonalizada();
    }
 	
 	
@@ -122,6 +128,14 @@ public class TelaConsultaProcessosController {
 	@FXML
 	public void mudarLogin() {
 		Main.mudarTela("login");
+	}
+	@FXML
+	public void exibirDescricao() {
+		Alert popup = new Alert(AlertType.INFORMATION);
+		popup.setHeaderText("");
+		popup.setTitle("Descrição do monitor");
+		popup.setContentText("Nesta tela será possível realizar a consulta de processos em aberto usando filtro por período, cliente ou id do processo..");
+		popup.show();
 	}
 	
 }

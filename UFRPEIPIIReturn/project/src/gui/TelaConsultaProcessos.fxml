@@ -44,7 +44,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TableView fx:id="tableProcessos" layoutY="208.0" prefHeight="293.0" prefWidth="500.0">
+            <TableView fx:id="tableProcessos" layoutY="240.0" prefHeight="261.0" prefWidth="500.0">
               <columns>
                 <TableColumn fx:id="columnId" prefWidth="66.0" text="ID" />
                 <TableColumn fx:id="columnCliente" prefWidth="122.0" text="Cliente" />
@@ -53,6 +53,7 @@
                   <TableColumn fx:id="columnStatus" prefWidth="113.0" text="Status" />
               </columns>
             </TableView>
+            <Button fx:id="dadosASeremExibidos" layoutX="217.0" layoutY="195.0" mnemonicParsing="false" text="Consultar" />
          </children>
       </Pane>
       <MenuBar prefHeight="25.0" prefWidth="500.0">
@@ -70,7 +71,7 @@
             </Menu>
             <Menu mnemonicParsing="false" text="Ajuda">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Descrição da página" />
+                        <MenuItem fx:id="exibirDescricao" mnemonicParsing="false" onAction="#exibirDescricao" text="Descrição da página" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Sair">

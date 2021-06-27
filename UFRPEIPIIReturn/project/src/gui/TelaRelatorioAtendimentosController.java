@@ -3,8 +3,9 @@ package gui;
 import application.Main;
 
 import javafx.fxml.FXML;
-
+import javafx.scene.control.Alert;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.Alert.AlertType;
 
 public class TelaRelatorioAtendimentosController {
 
@@ -25,6 +26,8 @@ public class TelaRelatorioAtendimentosController {
 	private MenuItem menuGuiche;
 	@FXML
 	private MenuItem menuLogout;
+	@FXML
+	private MenuItem exibirDescricao;
 	
 	
 	@FXML
@@ -58,6 +61,14 @@ public class TelaRelatorioAtendimentosController {
 	@FXML
 	public void mudarLogin() {
 		Main.mudarTela("login");
+	}
+	@FXML
+	public void exibirDescricao() {
+		Alert popup = new Alert(AlertType.INFORMATION);
+		popup.setHeaderText("");
+		popup.setTitle("Descrição do monitor");
+		popup.setContentText("Esta tela apresentará o histórico de atendimentos realizados no cartório.");
+		popup.show();
 	}
 
 	
