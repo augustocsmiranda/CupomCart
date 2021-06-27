@@ -133,7 +133,7 @@ public class TelaConsultaProcessosController {
 	public void exibirDescricao() {
 		Alert popup = new Alert(AlertType.INFORMATION);
 		popup.setHeaderText("");
-		popup.setTitle("Descrição do monitor");
+		popup.setTitle("Descrição da tela");
 		popup.setContentText("Nesta tela será possível realizar a consulta de processos em aberto usando filtro por período, cliente ou id do processo..");
 		popup.show();
 	}

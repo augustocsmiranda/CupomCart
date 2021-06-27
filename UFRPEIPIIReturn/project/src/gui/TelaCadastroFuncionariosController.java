@@ -142,7 +142,7 @@ public class TelaCadastroFuncionariosController {
 	public void exibirDescricao() {
 		Alert popup = new Alert(AlertType.INFORMATION);
 		popup.setHeaderText("");
-		popup.setTitle("Descrição do monitor");
+		popup.setTitle("Descrição da tela");
 		popup.setContentText("Local onde o cadastro de novos funcionários será feito. Uma tebela na parte inferior da tela exibirá os funcionários recentemente adicionados ao sistema.");
 		popup.show();
 	}

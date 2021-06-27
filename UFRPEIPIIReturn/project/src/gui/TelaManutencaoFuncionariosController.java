@@ -119,7 +119,7 @@ public class TelaManutencaoFuncionariosController {
 	public void exibirDescricao() {
 		Alert popup = new Alert(AlertType.INFORMATION);
 		popup.setHeaderText("");
-		popup.setTitle("Descrição do monitor");
+		popup.setTitle("Descrição da tela");
 		popup.setContentText("Esta tela tem o objetivo de auxiliar o Administrador no gerenciamento dos funcionários do cartório. Possui as funções de editar, remover e cadastrar novos funcionários, assim com a listagem de todos eles.");
 		popup.show();
 	}

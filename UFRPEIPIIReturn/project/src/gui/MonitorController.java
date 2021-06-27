@@ -85,7 +85,7 @@ public class MonitorController {
 	public void exibirDescricao() {
 		Alert popup = new Alert(AlertType.INFORMATION);
 		popup.setHeaderText("");
-		popup.setTitle("Descrição do monitor");
+		popup.setTitle("Descrição da tela");
 		popup.setContentText("Essa tela tem a função de exibir o cupom sendo chamado e o últimos 3 cupons chamados até o momento.");
 		popup.show();
 	}

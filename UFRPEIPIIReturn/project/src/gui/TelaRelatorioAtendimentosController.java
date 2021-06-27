@@ -66,7 +66,7 @@ public class TelaRelatorioAtendimentosController {
 	public void exibirDescricao() {
 		Alert popup = new Alert(AlertType.INFORMATION);
 		popup.setHeaderText("");
-		popup.setTitle("Descrição do monitor");
+		popup.setTitle("Descrição da tela");
 		popup.setContentText("Esta tela apresentará o histórico de atendimentos realizados no cartório.");
 		popup.show();
 	}

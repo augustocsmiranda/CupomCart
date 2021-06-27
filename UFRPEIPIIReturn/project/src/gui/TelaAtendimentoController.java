@@ -72,7 +72,7 @@ public class TelaAtendimentoController {
 	public void exibirDescricao() {
 		Alert popup = new Alert(AlertType.INFORMATION);
 		popup.setHeaderText("");
-		popup.setTitle("Descrição do monitor");
+		popup.setTitle("Descrição da tela");
 		popup.setContentText("Dentro dessa tela, é possível adicionar as informações do cliente sendo atendido, para fins de registro que serão adicionados ao histórico de atendimentos.");
 		popup.show();
 	}
