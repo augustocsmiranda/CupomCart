@@ -3,8 +3,9 @@ package gui;
 import application.Main;
 
 import javafx.fxml.FXML;
-
+import javafx.scene.control.Alert;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.Alert.AlertType;
 
 public class TelaDeProcessosController {
 
@@ -25,6 +26,8 @@ public class TelaDeProcessosController {
 	private MenuItem menuGuiche;
 	@FXML
 	private MenuItem menuLogout;
+	@FXML
+	private MenuItem exibirDescricao;
 	
 
 	@FXML
@@ -58,6 +61,14 @@ public class TelaDeProcessosController {
 	@FXML
 	public void mudarLogin() {
 		Main.mudarTela("login");
+	}
+	@FXML
+	public void exibirDescricao() {
+		Alert popup = new Alert(AlertType.INFORMATION);
+		popup.setHeaderText("");
+		popup.setTitle("Descrição do monitor");
+		popup.setContentText("Esta tela tem o objetivo de auxiliar o Administrador no gerenciamento dos funcionários do cartório. Possui as funções de editar, remover e cadastrar novos funcionários, assim com a listagem de todos eles.");
+		popup.show();
 	}
 	
 }

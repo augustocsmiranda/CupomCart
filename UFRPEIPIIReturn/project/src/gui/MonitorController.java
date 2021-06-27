@@ -3,6 +3,8 @@ package gui;
 import application.Main;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 
@@ -27,6 +29,8 @@ public class MonitorController {
 	@FXML
 	private MenuItem menuLogout;
 	@FXML
+	private MenuItem exibirDescricao;
+	@FXML
 	private Label exibirCupomAtual;
 	@FXML
 	private Label exibirGuicheAtual;
@@ -36,6 +40,9 @@ public class MonitorController {
 	private Label exibirPenultimo;
 	@FXML
 	private Label exibitAntePenultimo;
+	
+	
+	
 	
 	
 	
@@ -73,6 +80,14 @@ public class MonitorController {
 	@FXML
 	public void mudarLogin() {
 		Main.mudarTela("login");
+	}
+	@FXML
+	public void exibirDescricao() {
+		Alert popup = new Alert(AlertType.INFORMATION);
+		popup.setHeaderText("");
+		popup.setTitle("Descrição do monitor");
+		popup.setContentText("Essa tela tem a função de exibir o cupom sendo chamado e o últimos 3 cupons chamados até o momento.");
+		popup.show();
 	}
 	
 }

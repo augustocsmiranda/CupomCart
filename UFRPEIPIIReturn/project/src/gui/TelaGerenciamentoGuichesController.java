@@ -3,8 +3,9 @@ package gui;
 import application.Main;
 
 import javafx.fxml.FXML;
-
+import javafx.scene.control.Alert;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.Alert.AlertType;
 
 public class TelaGerenciamentoGuichesController {
 
@@ -24,6 +25,8 @@ public class TelaGerenciamentoGuichesController {
 	private MenuItem menuGuiche;
 	@FXML
 	private MenuItem menuLogout;
+	@FXML
+	private MenuItem exibirDescricao;
 	
 	
 	@FXML
@@ -57,6 +60,14 @@ public class TelaGerenciamentoGuichesController {
 	@FXML
 	public void mudarLogin() {
 		Main.mudarTela("login");
+	}
+	@FXML
+	public void exibirDescricao() {
+		Alert popup = new Alert(AlertType.INFORMATION);
+		popup.setHeaderText("");
+		popup.setTitle("Descrição do monitor");
+		popup.setContentText("Aqui o Administrador poderá gerencia os guichês do cartório. Os guichês poderão ser criados, removidos, ou ter seu status alterado.");
+		popup.show();
 	}
 	
 }
