@@ -67,7 +67,7 @@ public class PainelAdministradorController {
 	public void exibirDescricao() {
 		Alert popup = new Alert(AlertType.INFORMATION);
 		popup.setHeaderText("");
-		popup.setTitle("Descrição do monitor");
+		popup.setTitle("Descrição do painel do administrador");
 		popup.setContentText("");
 		popup.show();
 	}

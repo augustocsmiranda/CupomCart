@@ -65,7 +65,7 @@ public class TelaGerenciamentoGuichesController {
 	public void exibirDescricao() {
 		Alert popup = new Alert(AlertType.INFORMATION);
 		popup.setHeaderText("");
-		popup.setTitle("Descrição do monitor");
+		popup.setTitle("Descrição da tela");
 		popup.setContentText("Aqui o Administrador poderá gerencia os guichês do cartório. Os guichês poderão ser criados, removidos, ou ter seu status alterado.");
 		popup.show();
 	}
