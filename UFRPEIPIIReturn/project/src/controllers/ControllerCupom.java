@@ -11,7 +11,7 @@ public class ControllerCupom {
 	private IRepositorioGenerico<Cupom> repositorioCupons;
 	private static ControllerCupom instance;
 	
-	private ControllerCupom() {
+	public ControllerCupom() {
 		this.repositorioCupons = new RepositorioGenerico<>();
 	}
 
