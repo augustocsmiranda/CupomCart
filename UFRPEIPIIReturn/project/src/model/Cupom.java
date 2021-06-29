@@ -1,34 +1,45 @@
 package model;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 public class Cupom {
 
-	private Integer id;
-	private Guiche guiche;
-	private String[] tipoAtendimento;
+	private String numero;
+	private Integer guiche;
+	private ArrayList<String> tipoAtendimento = new ArrayList<String>();
 	private LocalDateTime horaDeImpressao;
 	private boolean cupomChamado;
 	
 	
 	
-	public Integer getId() {
-		return id;
+	public Cupom(String numero, Integer guiche, String tipoAtendimento, LocalDateTime horaDeImpressao,
+			boolean cupomChamado) {
+		super();
+		this.numero = numero;
+		this.guiche = guiche;
+		this.tipoAtendimento.add(tipoAtendimento);
+		this.horaDeImpressao = horaDeImpressao;
+		this.cupomChamado = cupomChamado;
 	}
-	public void setId(Integer id) {
-		this.id = id;
+	
+	public String getNumero() {
+		return numero;
 	}
-	public Guiche getGuiche() {
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+	public Integer getGuiche() {
 		return guiche;
 	}
-	public void setGuiche(Guiche guiche) {
+	public void setGuiche(Integer guiche) {
 		this.guiche = guiche;
 	}
-	public String[] getTipoAtendimento() {
+	public ArrayList<String> getTipoAtendimento() {
 		return tipoAtendimento;
 	}
-	public void setTipoAtendimento(String[] tipoAtendimento) {
-		this.tipoAtendimento = tipoAtendimento;
+	public void setTipoAtendimento(String tipoAtendimento) {
+		this.tipoAtendimento.add(tipoAtendimento);
 	}
 	public LocalDateTime getHoraDeImpressao() {
 		return horaDeImpressao;

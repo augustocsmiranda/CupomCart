@@ -45,7 +45,7 @@
                   <Font size="46.0" />
                </font>
             </Label>
-            <Label fx:id="exibiirUltimo" alignment="CENTER" layoutX="23.0" layoutY="379.0" prefHeight="100.0" prefWidth="122.0" style="-fx-border-color: black; -fx-border-radius: 10px;" textAlignment="CENTER" wrapText="true">
+            <Label fx:id="exibirUltimo" alignment="CENTER" layoutX="23.0" layoutY="379.0" prefHeight="100.0" prefWidth="122.0" style="-fx-border-color: black; -fx-border-radius: 10px;" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="26.0" />
                </font>
@@ -80,6 +80,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
+            <Button fx:id="chamarCupom" layoutX="208.0" layoutY="317.0" mnemonicParsing="false" onAction="#chamarCupom" text="Chamar cupom" />
          </children>
       </Pane>
    </children>
