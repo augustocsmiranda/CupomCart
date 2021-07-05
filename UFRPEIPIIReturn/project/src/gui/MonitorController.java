@@ -48,6 +48,8 @@ public class MonitorController {
 	@FXML
 	private Button chamarCupom;
 	
+	private Integer idIncrementalCupons = 0;
+	
 	private int ordem = 0;
 	
 	public static ControllerCupom controllerCupons = new ControllerCupom();
@@ -97,6 +99,16 @@ public class MonitorController {
 		ordem ++;
 		
 	}
+	
+	
+	public void gerarCupoom() throws Exception {
+		
+		idIncrementalCupons++;
+		Cupom cupom = new Cupom(idIncrementalCupons.toString(), 2, "Casamento", LocalDateTime.now(), true);
+		controllerCupons.salvar(cupom);
+	}
+	
+	
 	@FXML
 	public void mudarRelatorios() {
 		Main.mudarTela("relatorioA");
