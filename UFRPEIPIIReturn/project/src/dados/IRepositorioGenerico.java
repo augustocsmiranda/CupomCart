@@ -2,7 +2,7 @@ package dados;
 
 import java.util.List;
 
-public interface IRepositorioGenerico<T> {
+public interface IRepositorioGenerico<T>{
 
 	
 	 void salvar(T obj) throws Exception;

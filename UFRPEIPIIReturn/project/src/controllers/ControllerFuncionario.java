@@ -4,6 +4,7 @@ import java.util.List;
 
 import dados.IRepositorioGenerico;
 import dados.RepositorioGenerico;
+import excecoes.ElementoNaoExisteException;
 import model.Funcionario;
 
 public class ControllerFuncionario {
@@ -36,5 +37,18 @@ public class ControllerFuncionario {
 		repositorioFuncionarios.update(funcionario);
 	}
 	
+	public Funcionario findByLogin(String login) throws ElementoNaoExisteException {
+		
+		List<Funcionario> lista = repositorioFuncionarios.listar();
+		
+		for(Funcionario funcionario:lista) {
+			if (funcionario.getLogin().equals(login)) {
+				return funcionario;
+			}
+		}
+		
+		throw new ElementoNaoExisteException();
+		
+	}
 
 }

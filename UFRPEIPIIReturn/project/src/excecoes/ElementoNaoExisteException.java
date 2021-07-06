@@ -12,7 +12,19 @@ public class ElementoNaoExisteException extends Exception {
 		Alert popup = new Alert(AlertType.ERROR);
 		popup.setHeaderText("");
 		popup.setTitle("Erro de login");
-		popup.setContentText(String.format("O %s não existe no bando de dados.", elemento.getClass()));
+		popup.setContentText(String.format("O %s não existe no banco de dados.", elemento.getClass()));
+		popup.show();
+	
+
+	}
+	
+	
+	public ElementoNaoExisteException() {
+		
+		Alert popup = new Alert(AlertType.ERROR);
+		popup.setHeaderText("");
+		popup.setTitle("Erro de login");
+		popup.setContentText(String.format("Dados não existem no banco de dados."));
 		popup.show();
 	
 
