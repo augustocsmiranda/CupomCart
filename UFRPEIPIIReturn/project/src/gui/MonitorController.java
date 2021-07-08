@@ -106,6 +106,8 @@ public class MonitorController {
 		idIncrementalCupons++;
 		Cupom cupom = new Cupom(idIncrementalCupons.toString(), 2, "Casamento", LocalDateTime.now(), true);
 		controllerCupons.salvar(cupom);
+		
+		//TODO Criação dinâmica de novo cupom usando um pop up para adição de informações adicionais
 	}
 	
 	

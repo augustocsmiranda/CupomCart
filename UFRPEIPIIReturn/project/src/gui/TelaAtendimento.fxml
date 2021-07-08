@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
 <?import java.lang.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.TelaAtendimentoController">
    <children>
@@ -55,7 +54,7 @@
                </font>
             </Label>
             <Button layoutX="141.0" layoutY="409.0" mnemonicParsing="false" text="Concluir" />
-            <Button fx:id="BTNprocessos" layoutX="282.0" layoutY="409.0" mnemonicParsing="false" onAction="#BTNprocessos" text="Abrir Processo" />
+            <Button fx:id="BTNprocessos" layoutX="296.0" layoutY="409.0" mnemonicParsing="false" onAction="#abrirProcesso" text="Abrir Processo" />
             <DatePicker layoutX="378.0" layoutY="172.0" prefHeight="25.0" prefWidth="108.0" />
             <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="500.0">
                <menus>
@@ -86,6 +85,7 @@
             <CheckBox layoutX="17.0" layoutY="331.0" mnemonicParsing="false" text="Reconhecimento de Firma" />
             <CheckBox layoutX="218.0" layoutY="331.0" mnemonicParsing="false" text="Casamento" />
             <CheckBox layoutX="343.0" layoutY="297.0" mnemonicParsing="false" text="Atestado de óbito" />
+            <Button fx:id="chamarCupom" layoutX="384.0" layoutY="47.0" mnemonicParsing="false" onAction="#chamarCupom" text="Chamar cupom" />
          </children>
       </Pane>
    </children>

@@ -79,10 +79,10 @@ public class TelaCadastroFuncionariosController {
 
 	
 	public void atualizarListagemdeFuncionarios() {
+		
 		ObservableList<Funcionario> listaFuncionarios = FXCollections.observableArrayList();
         listaFuncionarios.addAll(controllerFuncionario.listar()); 
 		tableFuncionarios.setItems(listaFuncionarios);
-		System.out.println(listaFuncionarios.toString());
 	}
 	
 	@FXML

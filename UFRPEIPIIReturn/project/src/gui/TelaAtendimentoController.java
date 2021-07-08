@@ -1,6 +1,7 @@
 package gui;
 
 import application.Main;
+import controllers.ControllerProcesso;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -31,8 +32,14 @@ public class TelaAtendimentoController {
 	private MenuItem menuLogout;
 	@FXML
 	private MenuItem exibirDescricao;
+	@FXML
+	private Button chamarCupom;
 	
+	MonitorController monitorController = new MonitorController();
 	
+	ControllerProcesso controllerProcesso = new ControllerProcesso();
+	
+
 	@FXML
 	public void BTNprocessos(ActionEvent event) {
 		Main.mudarTela("processo");
@@ -75,6 +82,18 @@ public class TelaAtendimentoController {
 		popup.setTitle("Descrição da tela");
 		popup.setContentText("Dentro dessa tela, é possível adicionar as informações do cliente sendo atendido, para fins de registro que serão adicionados ao histórico de atendimentos.");
 		popup.show();
+	}
+	@FXML
+	public void chamarCupom() throws InterruptedException {
+		monitorController.chamarCupom();
+	}
+	
+	public void abrirProcesso() {
+		//TODO Função de abrir o processo e adicioná-lo à listagem de processos
+	}
+	
+	public void concluir() {
+		//TODO Função de concuir o atendimento
 	}
 	
 }
