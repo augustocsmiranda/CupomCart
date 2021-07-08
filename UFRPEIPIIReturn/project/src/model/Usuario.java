@@ -3,7 +3,7 @@ package model;
 public abstract class Usuario {
   	private String nome,senha;
 	private String codigo;
-	//
+	
 	public Usuario(String nome, String senha, String codigo) {
 		this.nome =nome;
 		this.senha = senha;
