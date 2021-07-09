@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.TelaManutencaoFuncionariosController">
+<AnchorPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.TelaManutencaoFuncionariosController">
    <children>
       <Pane prefHeight="500.0" prefWidth="500.0">
          <children>
-            <Label layoutX="122.0" layoutY="51.0" text="Manutenção de Funcionários">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-            <Label layoutX="22.0" layoutY="103.0" text="Listagem de funcionários:">
+            <Label layoutX="4.0" layoutY="33.0" text="Listagem de funcionários:">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button layoutX="419.0" layoutY="135.0" mnemonicParsing="false" text="Editar" />
-            <Button layoutX="419.0" layoutY="174.0" mnemonicParsing="false" text="Remover" />
-            <Button fx:id="btnCadastrarFuncionario" layoutX="419.0" layoutY="214.0" mnemonicParsing="false" onAction="#btnCadastrarFuncionario" text="Cadastrar" />
+            <Button layoutX="419.0" layoutY="63.0" mnemonicParsing="false" text="Editar" />
+            <Button layoutX="420.0" layoutY="94.0" mnemonicParsing="false" text="Remover" />
+            <Button fx:id="btnCadastrarFuncionario" layoutX="420.0" layoutY="126.0" mnemonicParsing="false" onAction="#btnCadastrarFuncionario" text="Cadastrar" />
             <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="500.0">
                <menus>
                   <Menu mnemonicParsing="false" text="Exibir Tela">
@@ -49,13 +50,23 @@
                   </Menu>
                </menus>
             </MenuBar>
-            <TableView fx:id="tableManutencaoFuncionarios" layoutY="135.0" prefHeight="364.0" prefWidth="403.0">
+            <TableView fx:id="tableManutencaoFuncionarios" layoutY="56.0" prefHeight="276.0" prefWidth="403.0">
                <columns>
                   <TableColumn fx:id="columnNome" prefWidth="159.0" text="Nome" />
                   <TableColumn fx:id="columnCPF" minWidth="3.0" prefWidth="115.0" text="CPF" />
                   <TableColumn fx:id="columnDataNascimento" prefWidth="135.0" resizable="false" text="Data de Nascimento" />
                </columns></TableView>
-            <Button fx:id="atualizarListagemdeFuncionarios" layoutX="419.0" layoutY="250.0" mnemonicParsing="false" onAction="#atualizarListagemdeFuncionarios" text="Atualizar" />
+            <Button fx:id="atualizarListagemdeFuncionarios" layoutX="422.0" layoutY="159.0" mnemonicParsing="false" onAction="#atualizarListagemdeFuncionarios" text="Atualizar" />
+            <ImageView fitHeight="130.0" fitWidth="442.0" layoutX="54.0" layoutY="359.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imgs/Logo_Funcionarios_OK.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="160.0" fitWidth="377.0" layoutX="16.0" layoutY="372.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imgs/TR_OK.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
    </children>

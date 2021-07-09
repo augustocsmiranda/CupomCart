@@ -4,6 +4,7 @@ import java.util.List;
 
 import dados.IRepositorioGenerico;
 import dados.RepositorioGenerico;
+import excecoes.CampoInvalidoException;
 import model.Cupom;
 
 public class ControllerCupom {
@@ -21,6 +22,9 @@ public class ControllerCupom {
 	}
 	
 	public void salvar(Cupom cupom) throws Exception {
+		if(((cupom.getGuiche() == null) || (cupom.getHoraDeImpressao() == null) || (cupom.getNumero()==null) || (cupom.getTipoAtendimento() == null))) {
+			throw new CampoInvalidoException("Existem campos inválidos!");
+		}
 		repositorioCupons.salvar(cupom);
 	}
 	

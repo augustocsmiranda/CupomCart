@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import excecoes.ElementoNaoExisteException;
 import model.Funcionario;
 
 public class RepositorioGenerico<T> implements IRepositorioGenerico<T> {
@@ -34,7 +35,7 @@ public class RepositorioGenerico<T> implements IRepositorioGenerico<T> {
 		 if (this.elementos.contains(obj)) {
 	            this.elementos.remove(this.elementos.indexOf(obj));
 	        } else {
-	            throw new Exception();
+	            throw new ElementoNaoExisteException(obj);
 	        }
         		
 	}

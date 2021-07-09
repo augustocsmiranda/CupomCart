@@ -70,4 +70,16 @@ public class TelaGerenciamentoGuichesController {
 		popup.show();
 	}
 	
+	public void adicionarGuiche() {
+		//TODO Método para a adição de novos guichês
+	}
+	
+	public void removerGuiche() {
+		//TODO Método para a remoção de guichês
+	}
+	
+	public void alterarStatus() {
+		//TODO Função para mopdificar o status do guichê selecionado
+	}
+	
 }

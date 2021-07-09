@@ -1,12 +1,23 @@
 package gui;
 
+import java.time.LocalDate;
+
 import application.Main;
+import controllers.ControllerProcesso;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import model.Cliente;
+import model.Funcionario;
+import model.Processo;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class TelaAtendimentoController {
 
@@ -31,8 +42,17 @@ public class TelaAtendimentoController {
 	private MenuItem menuLogout;
 	@FXML
 	private MenuItem exibirDescricao;
+	@FXML
+	private Button chamarCupom;
+	
+	public static Integer idIncrementalProcesso = 0;
+	
+	MonitorController monitorController = new MonitorController();
+	
+	ControllerProcesso controllerProcesso = new ControllerProcesso();
 	
 	
+
 	@FXML
 	public void BTNprocessos(ActionEvent event) {
 		Main.mudarTela("processo");
@@ -75,6 +95,29 @@ public class TelaAtendimentoController {
 		popup.setTitle("Descrição da tela");
 		popup.setContentText("Dentro dessa tela, é possível adicionar as informações do cliente sendo atendido, para fins de registro que serão adicionados ao histórico de atendimentos.");
 		popup.show();
+	}
+	
+	
+	@FXML
+	public void chamarCupom() throws InterruptedException {
+		//TODO Função de chamar cupom dentro da tela de atendimento, utilizando dinamicamente do funcionário que está designado àquele guichê
+	}
+	
+	public void abrirProcesso() throws Exception {
+		
+		Cliente cliente = new Cliente();
+		Processo processo = new Processo();
+		processo.setNumero(idIncrementalProcesso.toString());
+		processo.setDataAbertura(LocalDate.now());
+		processo.setCliente(cliente);
+		processo.setStatus("Aberto");
+		controllerProcesso.salvar(processo);
+	
+		
+	}
+	
+	public void concluir() {
+		//TODO Função de concuir o atendimento
 	}
 	
 }
