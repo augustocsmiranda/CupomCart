@@ -1,6 +1,7 @@
 package gui;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import application.Main;
@@ -61,7 +62,7 @@ public class TelaConsultaProcessosController {
 
     @FXML
     public void initialize() {
-    	columnId.setCellValueFactory(new PropertyValueFactory<>("id"));
+    	columnId.setCellValueFactory(new PropertyValueFactory<>("numero"));
     	columnCliente.setCellValueFactory(new PropertyValueFactory<>("cliente"));
     	columnTipo.setCellValueFactory(new PropertyValueFactory<>("tipo"));  
     	columnDataAbertura.setCellValueFactory(new PropertyValueFactory<>("dataAbertura"));  
@@ -81,23 +82,54 @@ public class TelaConsultaProcessosController {
 		System.out.println(tableProcessos.toString());
 	}
 	
-   @FXML
-   public List<Processo> dadosASeremExibidos() {
-	   return controllerProcesso.exibirListaPersonalizada();
+   
+   public void dadosASeremExibidosPorData() {
 	   
-	   //TODO Método para a listagem dos processos baseados nas datas informadas
+	   LocalDate dataInicial = LocalDate.of(this.dpPrimeiraData.getValue().getYear(), this.dpPrimeiraData.getValue().getMonthValue(), this.dpPrimeiraData.getValue().getDayOfMonth());
+	   LocalDate dataFinal = LocalDate.of(this.dpSegundaData.getValue().getYear(), this.dpSegundaData.getValue().getMonthValue(), this.dpSegundaData.getValue().getDayOfMonth());
+
+	   List<Processo> listaDeProcessos = controllerProcesso.listar();
+	   List<Processo> processosDentroDoPeriodo = new ArrayList<Processo>();
+	   
+	   for (Processo processo:listaDeProcessos) {
+		   
+		   if(processo.getDataAbertura().isBefore(dataFinal) && processo.getDataAbertura().isAfter(dataInicial)) {
+			   processosDentroDoPeriodo.add(processo);
+		   }
+	   }
+	   
+	   this.atualizarConsultaProcessos(processosDentroDoPeriodo);
+   }
+   
+   public void dadosASeremExibidosPorCliente() {
+	   List<Processo> listaProcessos = new ArrayList<Processo>();
+	   List<Processo> processosDoCliente = new ArrayList<Processo>();
+	   
+	   for(Processo processo : listaProcessos) {
+		   
+		   if(processo.getCliente().getNome().equals(this.txtCliente.toString())) {
+			   processosDoCliente.add(processo);
+		   }
+	   }
+	   atualizarConsultaProcessos(processosDoCliente); 
+   }
+   
+   public void dadosASeremExibidosPorId() {
+	   List<Processo> listaProcessos = new ArrayList<Processo>();
+	   List<Processo> processoIdCorrespondente = new ArrayList<Processo>();
+	   
+	   for(Processo processo:listaProcessos) {
+		   if(processo.getNumero().equals(txtId.toString())) {
+			   processoIdCorrespondente.add(processo);
+			   break;
+		   }
+	   }
+	   
+	   this.atualizarConsultaProcessos(processoIdCorrespondente);
+	    
    }
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	@FXML
 	public void mudarRelatorios() {
