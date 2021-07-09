@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 
 public class PainelAdministradorController {
 
@@ -28,6 +29,14 @@ public class PainelAdministradorController {
 	private MenuItem menuLogout;
 	@FXML
 	private MenuItem exibirDescricao;
+	@FXML
+	private Button onBtManutencaoFuncionario;
+	@FXML
+	private Button onBTGerenciamentoGuiches;
+	@FXML
+	private Button onBTMenuAtendimento;
+	@FXML
+	private Button onBTCadastroFuncionarios;
 	
 	
 
