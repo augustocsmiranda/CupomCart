@@ -55,6 +55,8 @@ public class TelaConsultaProcessosController {
 	@FXML
 	private Button dadosASeremExibidos;
 	
+	private int parametroFiltro = 0;
+	
 	@FXML private TableView<Processo> tableProcessos = new TableView<Processo>();
     @FXML private TableColumn<Processo, String> columnId;
     @FXML private TableColumn<Processo, String> columnCliente;
@@ -104,8 +106,8 @@ public class TelaConsultaProcessosController {
    
    public void dadosASeremExibidosPorData() throws Exception {
 	   
-	   LocalDate dataInicial = LocalDate.of(this.dpPrimeiraData.getValue().getYear(), this.dpPrimeiraData.getValue().getMonthValue(), this.dpPrimeiraData.getValue().getDayOfMonth());
-	   LocalDate dataFinal = LocalDate.of(this.dpSegundaData.getValue().getYear(), this.dpSegundaData.getValue().getMonthValue(), this.dpSegundaData.getValue().getDayOfMonth());
+	   LocalDate dataInicial = LocalDate.of(this.dpPrimeiraData.getValue().getYear(), this.dpPrimeiraData.getValue().getMonth(), this.dpPrimeiraData.getValue().getDayOfMonth());
+	   LocalDate dataFinal = LocalDate.of(this.dpSegundaData.getValue().getYear(), this.dpSegundaData.getValue().getMonth(), this.dpSegundaData.getValue().getDayOfMonth());
 
 	   List<Processo> listaDeProcessosData = controllerProcesso.listar();
 	   List<Processo> processosDentroDoPeriodo = new ArrayList<Processo>();
@@ -118,6 +120,7 @@ public class TelaConsultaProcessosController {
 	   }
 	   
 	   this.atualizarConsultaProcessos(processosDentroDoPeriodo);
+	   parametroFiltro++;
    }
    
    public void dadosASeremExibidosPorCliente() throws Exception {
@@ -131,6 +134,7 @@ public class TelaConsultaProcessosController {
 		   }
 	   }
 	   this.atualizarConsultaProcessos(processosDoCliente); 
+	   parametroFiltro++;
    }
    
    public void dadosASeremExibidosPorId() throws Exception {
@@ -145,22 +149,28 @@ public class TelaConsultaProcessosController {
 	   }
 	   
 	   this.atualizarConsultaProcessos(processoIdCorrespondente);
-	    
+	   parametroFiltro++;
    }
 	
 
 	@FXML
 	public void consultar() throws Exception {
-		if(txtId.toString() != null || txtId.toString() != "") {
+	
+		if((txtId.getText().toString() != null && txtId.getText().toString() != "") && parametroFiltro == 0 ) {
 			dadosASeremExibidosPorId();
 		}
-		else if (this.txtCliente.toString() != null && this.txtCliente.toString() != "") {
-			System.out.println("Entrei aqui");
+		if (parametroFiltro == 0 && !dpPrimeiraData.hasProperties() && !dpSegundaData.hasProperties() && this.txtCliente.getText().toString()!= null &&  this.txtCliente.getText().toString() != "") {
+			System.out.println(this.txtCliente.toString());
 			dadosASeremExibidosPorCliente();
 		}
-		else if(this.dpPrimeiraData != null && this.dpSegundaData != null) {
+	    if(parametroFiltro == 0 || ((txtId.getText().toString() == null || txtId.getText().toString() == "") && (this.txtCliente.toString() == null || this.txtCliente.toString() ==""))) {
+	    	System.out.println("Imprimindo datas");
+			System.out.println(this.dpPrimeiraData);
+			System.out.println(this.dpSegundaData);
 			dadosASeremExibidosPorData();
 		}
+	    parametroFiltro = 0;
+	    System.out.println(parametroFiltro);
 	}
    
 	@FXML
