@@ -41,6 +41,8 @@ public class TelaAtendimentoController {
 	@FXML
 	private MenuItem menuLogout;
 	@FXML
+	private MenuItem menuConsulta;
+	@FXML
 	private MenuItem exibirDescricao;
 	@FXML
 	private Button chamarCupom;
@@ -86,6 +88,10 @@ public class TelaAtendimentoController {
 		Main.mudarTela("processo");
 	}
 	@FXML
+	public void mudarConsulta() {
+		Main.mudarTela("consulta");
+	}
+	@FXML
 	public void mudarLogin() {
 		Main.mudarTela("login");
 	}
@@ -109,7 +115,7 @@ public class TelaAtendimentoController {
 		Processo processo = new Processo();
 		processo.setNumero(idIncrementalProcesso.toString());
 		processo.setDataAbertura(LocalDate.now());
-		processo.setCliente(cliente);
+		processo.setCliente("fulano2");
 		processo.setStatus("Aberto");
 		controllerProcesso.salvar(processo);
 	

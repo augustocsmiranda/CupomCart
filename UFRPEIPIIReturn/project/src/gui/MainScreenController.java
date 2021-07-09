@@ -38,6 +38,8 @@ public class MainScreenController {
 		}
 	
 	}
+	
+	//TODO criar método Sessão atual para usar as informações do atendente logado
 }
 
 

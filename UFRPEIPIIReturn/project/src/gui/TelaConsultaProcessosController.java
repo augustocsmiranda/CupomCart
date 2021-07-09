@@ -6,6 +6,7 @@ import java.util.List;
 
 import application.Main;
 import controllers.ControllerProcesso;
+import excecoes.NaoHaInformacaoDisponivelException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -18,6 +19,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
+import model.Atendente;
+import model.Cliente;
+import model.Funcionario;
 import model.Processo;
 
 public class TelaConsultaProcessosController {
@@ -61,37 +65,52 @@ public class TelaConsultaProcessosController {
     public ControllerProcesso controllerProcesso = new ControllerProcesso();
 
     @FXML
-    public void initialize() {
+    public void initialize() throws Exception {
     	columnId.setCellValueFactory(new PropertyValueFactory<>("numero"));
     	columnCliente.setCellValueFactory(new PropertyValueFactory<>("cliente"));
-    	columnTipo.setCellValueFactory(new PropertyValueFactory<>("tipo"));  
+    	columnTipo.setCellValueFactory(new PropertyValueFactory<>("descricao"));  
     	columnDataAbertura.setCellValueFactory(new PropertyValueFactory<>("dataAbertura"));  
     	columnStatus.setCellValueFactory(new PropertyValueFactory<>("status"));  
-    	columnId.setPrefWidth(66);
-        columnCliente.setPrefWidth(122);
+    	columnId.setPrefWidth(60);
+        columnCliente.setPrefWidth(140);
         columnTipo.setPrefWidth(81);
-        columnDataAbertura.setPrefWidth(177);
-        columnStatus.setPrefWidth(113);
+        columnDataAbertura.setPrefWidth(120);
+        columnStatus.setPrefWidth(110);
+        Cliente cliente = new Cliente();
+        cliente.setNome("Fulano");
+        Atendente atendente = new Atendente();
+        atendente.setNome("Sicrano");
         
+        
+        Processo processo = new Processo("2", LocalDate.now(), "Fulano", "Algum processo", "Tramitando", atendente);
+        Processo processo1 = new Processo("5", LocalDate.now(), "Sicrano", "processo2", "Indeferido", atendente);
+
+        controllerProcesso.salvar(processo);
+        controllerProcesso.salvar(processo1);
+        
+        atualizarConsultaProcessos(controllerProcesso.listar());
     }
 	
-    public void atualizarConsultaProcessos(List<Processo> lista) {
+    public void atualizarConsultaProcessos(List<Processo> lista)  throws Exception{
 		ObservableList<Processo> listaProcessos = FXCollections.observableArrayList();
 		listaProcessos.addAll(lista); 
 		tableProcessos.setItems(listaProcessos);
+//		if(listaProcessos.isEmpty() || listaProcessos == null) {
+//			throw new NaoHaInformacaoDisponivelException(); 
+//		}
 		System.out.println(tableProcessos.toString());
 	}
 	
    
-   public void dadosASeremExibidosPorData() {
+   public void dadosASeremExibidosPorData() throws Exception {
 	   
 	   LocalDate dataInicial = LocalDate.of(this.dpPrimeiraData.getValue().getYear(), this.dpPrimeiraData.getValue().getMonthValue(), this.dpPrimeiraData.getValue().getDayOfMonth());
 	   LocalDate dataFinal = LocalDate.of(this.dpSegundaData.getValue().getYear(), this.dpSegundaData.getValue().getMonthValue(), this.dpSegundaData.getValue().getDayOfMonth());
 
-	   List<Processo> listaDeProcessos = controllerProcesso.listar();
+	   List<Processo> listaDeProcessosData = controllerProcesso.listar();
 	   List<Processo> processosDentroDoPeriodo = new ArrayList<Processo>();
 	   
-	   for (Processo processo:listaDeProcessos) {
+	   for (Processo processo:listaDeProcessosData) {
 		   
 		   if(processo.getDataAbertura().isBefore(dataFinal) && processo.getDataAbertura().isAfter(dataInicial)) {
 			   processosDentroDoPeriodo.add(processo);
@@ -101,25 +120,25 @@ public class TelaConsultaProcessosController {
 	   this.atualizarConsultaProcessos(processosDentroDoPeriodo);
    }
    
-   public void dadosASeremExibidosPorCliente() {
-	   List<Processo> listaProcessos = new ArrayList<Processo>();
+   public void dadosASeremExibidosPorCliente() throws Exception {
+	   List<Processo> listaProcessosCliente = controllerProcesso.listar();
 	   List<Processo> processosDoCliente = new ArrayList<Processo>();
 	   
-	   for(Processo processo : listaProcessos) {
+	   for(Processo processo : listaProcessosCliente) {
 		   
-		   if(processo.getCliente().getNome().equals(this.txtCliente.toString())) {
+		   if(processo.getCliente().toLowerCase().equals(this.txtCliente.getText().toLowerCase())) {
 			   processosDoCliente.add(processo);
 		   }
 	   }
-	   atualizarConsultaProcessos(processosDoCliente); 
+	   this.atualizarConsultaProcessos(processosDoCliente); 
    }
    
-   public void dadosASeremExibidosPorId() {
-	   List<Processo> listaProcessos = new ArrayList<Processo>();
+   public void dadosASeremExibidosPorId() throws Exception {
+	   List<Processo> listaProcessosId = controllerProcesso.listar();
 	   List<Processo> processoIdCorrespondente = new ArrayList<Processo>();
 	   
-	   for(Processo processo:listaProcessos) {
-		   if(processo.getNumero().equals(txtId.toString())) {
+	   for(Processo processo:listaProcessosId) {
+		   if(processo.getNumero().equals(txtId.getText())) {
 			   processoIdCorrespondente.add(processo);
 			   break;
 		   }
@@ -130,7 +149,20 @@ public class TelaConsultaProcessosController {
    }
 	
 
-	
+	@FXML
+	public void consultar() throws Exception {
+		if(txtId.toString() != null || txtId.toString() != "") {
+			dadosASeremExibidosPorId();
+		}
+		else if (this.txtCliente.toString() != null && this.txtCliente.toString() != "") {
+			System.out.println("Entrei aqui");
+			dadosASeremExibidosPorCliente();
+		}
+		else if(this.dpPrimeiraData != null && this.dpSegundaData != null) {
+			dadosASeremExibidosPorData();
+		}
+	}
+   
 	@FXML
 	public void mudarRelatorios() {
 		Main.mudarTela("relatorioA");
