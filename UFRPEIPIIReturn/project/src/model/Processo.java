@@ -6,11 +6,32 @@ public class Processo {
 
 	private String numero;
 	private LocalDate dataAbertura;
-	private Cliente cliente;
+	private String cliente;
 	private String descricao;
 	private String status;
 	private Atendente atendente;
 
+	
+	
+	public Processo(String numero, LocalDate dataAbertura, String cliente, String descricao, String status,
+			Atendente atendente) {
+		super();
+		this.numero = numero;
+		this.dataAbertura = dataAbertura;
+		this.cliente = cliente;
+		this.descricao = descricao;
+		this.status = status;
+		this.atendente = atendente;
+	}
+	
+	public Processo() {
+		this.numero = null;
+		this.dataAbertura = null;
+		this.cliente = null;
+		this.descricao = null;
+		this.status = null;
+		this.atendente = null;
+	}
 	
 	
 	public String getDescricao() {
@@ -37,10 +58,10 @@ public class Processo {
 	public void setDataAbertura(LocalDate dataAbertura) {
 		this.dataAbertura = dataAbertura;
 	}
-	public Cliente getCliente() {
+	public String getCliente() {
 		return cliente;
 	}
-	public void setCliente(Cliente cliente) {
+	public void setCliente(String cliente) {
 		this.cliente = cliente;
 	}
 	public Atendente getAtendente() {
