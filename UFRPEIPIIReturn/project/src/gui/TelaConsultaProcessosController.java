@@ -6,6 +6,7 @@ import java.util.List;
 
 import application.Main;
 import controllers.ControllerProcesso;
+import excecoes.NaoHaCamposPreenchidosException;
 import excecoes.NaoHaInformacaoDisponivelException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -97,10 +98,9 @@ public class TelaConsultaProcessosController {
 		ObservableList<Processo> listaProcessos = FXCollections.observableArrayList();
 		listaProcessos.addAll(lista); 
 		tableProcessos.setItems(listaProcessos);
-//		if(listaProcessos.isEmpty() || listaProcessos == null) {
-//			throw new NaoHaInformacaoDisponivelException(); 
-//		}
-		System.out.println(tableProcessos.toString());
+		if(listaProcessos.isEmpty() || listaProcessos == null) {
+			throw new NaoHaInformacaoDisponivelException(); 
+		}
 	}
 	
    
@@ -155,22 +155,21 @@ public class TelaConsultaProcessosController {
 
 	@FXML
 	public void consultar() throws Exception {
-	
+		try {
 		if((txtId.getText().toString() != null && txtId.getText().toString() != "") && parametroFiltro == 0 ) {
 			dadosASeremExibidosPorId();
 		}
 		if (parametroFiltro == 0 && !dpPrimeiraData.hasProperties() && !dpSegundaData.hasProperties() && this.txtCliente.getText().toString()!= null &&  this.txtCliente.getText().toString() != "") {
-			System.out.println(this.txtCliente.toString());
 			dadosASeremExibidosPorCliente();
 		}
 	    if(parametroFiltro == 0 || ((txtId.getText().toString() == null || txtId.getText().toString() == "") && (this.txtCliente.toString() == null || this.txtCliente.toString() ==""))) {
-	    	System.out.println("Imprimindo datas");
-			System.out.println(this.dpPrimeiraData);
-			System.out.println(this.dpSegundaData);
 			dadosASeremExibidosPorData();
 		}
 	    parametroFiltro = 0;
-	    System.out.println(parametroFiltro);
+		}catch(Exception e){
+			throw new NaoHaInformacaoDisponivelException();
+		}
+
 	}
    
 	@FXML
