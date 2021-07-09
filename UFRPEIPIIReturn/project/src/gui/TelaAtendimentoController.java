@@ -85,7 +85,7 @@ public class TelaAtendimentoController {
 	}
 	@FXML
 	public void chamarCupom() throws InterruptedException {
-		monitorController.chamarCupom();
+		//TODO Função de chamar cupom dentro da tela de atendimento, utilizando dinamicamente do funcionário que está designado àquele guichê
 	}
 	
 	public void abrirProcesso() {
