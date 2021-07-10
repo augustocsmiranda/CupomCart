@@ -11,7 +11,7 @@ public class ControllerGuiche {
 	private IRepositorioGenerico<Guiche> repositorioGuiche;
 	private static ControllerGuiche instance;
 	
-	private ControllerGuiche() {
+	public ControllerGuiche() {
 		this.repositorioGuiche = new RepositorioGenerico<>();
 	}
 
