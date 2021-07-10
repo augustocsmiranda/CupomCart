@@ -43,7 +43,7 @@ public class TelaGerenciamentoGuichesController {
 	@FXML
 	private Button atualizarListagemdeGuiches;
 	@FXML
-	private Button btnCadastrarGuiche;
+	private Button adicionarGuiche;
 	
 	@FXML private TableView<Guiche> tableGuiche;
 	@FXML private TableColumn<Guiche, Integer> columnIdentificador;
@@ -53,14 +53,14 @@ public class TelaGerenciamentoGuichesController {
 	
 	public static ControllerGuiche controllerguiche = new ControllerGuiche();
 	
-	@FXML
+	/*@FXML
 	public void initialize() {
 		columnIdentificador.setCellValueFactory(new PropertyValueFactory<>("identificador"));
 		columnDisponivel.setCellValueFactory(new PropertyValueFactory<>("disponivel"));
 		columnIdentificador.setPrefWidth(200);
 		columnDisponivel.setPrefWidth(150);
 		this.atualizarListagemdeGuiches();
-	}
+	}*/
 	
 	private void atualizarListagemdeGuiches() {
 		ObservableList<Guiche> listaGuiches = FXCollections.observableArrayList();
@@ -68,16 +68,7 @@ public class TelaGerenciamentoGuichesController {
 		tableGuiche.setItems(listaGuiches);
 	}
 	
-	@FXML
-	public void btnCadastrarGuiche() throws Exception{
-		Guiche guiche;
-		guiche = new Guiche();
-		
-		guiche.setIdentificador(Integer.parseInt(this.txtIdentificador.toString()));
-		guiche.setDisponivel(this.txtDisponivel.toString());
-		
-	}
-
+	
 	@FXML
 	public void mudarRelatorios() {
 		Main.mudarTela("relatorioA");
@@ -119,8 +110,13 @@ public class TelaGerenciamentoGuichesController {
 		popup.show();
 	}
 	
-	public void adicionarGuiche() {
+	public void adicionarGuiche() throws Exception{
 		//TODO Método para a adição de novos guichês
+		Guiche guiche;
+		guiche = new Guiche();
+		
+		guiche.setIdentificador(Integer.parseInt(this.txtIdentificador.toString()));
+		guiche.setDisponivel(this.txtDisponivel.toString());
 	}
 	
 	public void removerGuiche() {
