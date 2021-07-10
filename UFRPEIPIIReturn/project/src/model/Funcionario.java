@@ -2,7 +2,7 @@ package model;
 
 import java.time.LocalDate;
 
-public abstract class Funcionario extends Usuario {
+public abstract class Funcionario  {
 
 	private String login;
 	private String senha;
