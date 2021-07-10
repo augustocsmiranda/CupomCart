@@ -58,16 +58,16 @@ public class MonitorController {
 	
 	 public void initialize() throws Exception {
 		 
-		 Cupom cupom1 = new Cupom("N01", 2, "Casamento", LocalDateTime.now(), true);
-		 Cupom cupom2 = new Cupom("N02", 5, "Reconhecer firma", LocalDateTime.now(), true);
-		 Cupom cupom3 = new Cupom("N03", 1, "Casamento", LocalDateTime.now(), true);
-		 Cupom cupom4 = new Cupom("N04", 8, "Casamento", LocalDateTime.now(), true);
-		 Cupom cupom5 = new Cupom("N05", 9, "Casamento", LocalDateTime.now(), true);
-		 Cupom cupom6 = new Cupom("N06", 5, "Casamento", LocalDateTime.now(), true);
-		 Cupom cupom7 = new Cupom("P03", 5, "Casamento", LocalDateTime.now(), true);
-		 Cupom cupom8 = new Cupom("N22", 5, "Casamento", LocalDateTime.now(), true);
-		 Cupom cupom9 = new Cupom("P65", 5, "Casamento", LocalDateTime.now(), true);
-		 Cupom cupom10 = new Cupom("N56", 5, "Casamento", LocalDateTime.now(), true);
+		 Cupom cupom1 = new Cupom("01", 1, "Casamento", LocalDateTime.now(), true);
+		 Cupom cupom2 = new Cupom("02", 4, "Reconhecer firma", LocalDateTime.now(), true);
+		 Cupom cupom3 = new Cupom("03", 5, "Atestado de óbito", LocalDateTime.now(), true);
+		 Cupom cupom4 = new Cupom("04", 2, "Casamento", LocalDateTime.now(), true);
+		 Cupom cupom5 = new Cupom("05", 3, "Casamento", LocalDateTime.now(), true);
+		 Cupom cupom6 = new Cupom("06", 6, "Casamento", LocalDateTime.now(), true);
+		 Cupom cupom7 = new Cupom("07", 1, "Casamento", LocalDateTime.now(), true);
+		 Cupom cupom8 = new Cupom("P01", 2, "Casamento", LocalDateTime.now(), true);
+		 Cupom cupom9 = new Cupom("08", 3, "Casamento", LocalDateTime.now(), true);
+		 Cupom cupom10 = new Cupom("09", 4, "Casamento", LocalDateTime.now(), true);
 		 
 		 controllerCupons.salvar(cupom1);
 		 controllerCupons.salvar(cupom2);
@@ -137,7 +137,7 @@ public class MonitorController {
 	}
 	@FXML
 	public void mudarProcessos() {
-		Main.mudarTela("processo");
+		Main.mudarTela("consulta");
 	}
 	@FXML
 	public void mudarLogin() {

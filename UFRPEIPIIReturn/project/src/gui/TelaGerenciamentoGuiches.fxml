@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -37,15 +39,14 @@
                   </Menu>
                </menus>
             </MenuBar>
-            <TableView layoutX="-1.0" layoutY="31.0" prefHeight="350.0" prefWidth="385.0">
+            <TableView fx:id="tableGuiche" layoutX="-1.0" layoutY="31.0" prefHeight="200.0" prefWidth="385.0">
               <columns>
-                <TableColumn prefWidth="67.0" text="ID" />
-                <TableColumn prefWidth="122.0" text="Status" />
+                <TableColumn fx:id="columnIdentificador" prefWidth="67.0" text="ID" />
+                <TableColumn fx:id="columnDisponivel" prefWidth="122.0" text="Status" />
                   <TableColumn prefWidth="195.0" text="Atendente responsável" />
               </columns>
             </TableView>
-            <Button layoutX="398.0" layoutY="56.0" mnemonicParsing="false" text="Adicionar" />
-            <Button layoutX="398.0" layoutY="120.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="73.0" text="Designar atendente" textAlignment="CENTER" wrapText="true" />
+            <Button onAction="#btnCadastrarGuiche" layoutX="398.0" layoutY="56.0" mnemonicParsing="false" text="Adicionar" />            <Button layoutX="398.0" layoutY="120.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="73.0" text="Designar atendente" textAlignment="CENTER" wrapText="true" />
             <Button layoutX="398.0" layoutY="88.0" mnemonicParsing="false" text="Fechar" />
             <ImageView fitHeight="138.0" fitWidth="473.0" layoutX="14.0" layoutY="348.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -57,6 +58,10 @@
                   <Image url="@../imgs/TR_OK.png" />
                </image>
             </ImageView>
+            <Label layoutX="31.0" layoutY="254.0" text="ID:" />
+            <Label layoutX="31.0" layoutY="287.0" text="Disp.:" />
+            <TextField  fx:id="txtDisponivel" layoutX="66.0" layoutY="283.0" />
+            <TextField  fx:id="txtIdentificador" layoutX="66.0" layoutY="250.0" />
          </children></Pane>
    </children>
 </AnchorPane>

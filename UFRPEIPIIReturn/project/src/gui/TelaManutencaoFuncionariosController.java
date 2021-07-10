@@ -52,15 +52,15 @@ public class TelaManutencaoFuncionariosController {
     
     @FXML
     public void initialize() throws Exception {
-//    	Funcionario funcionario = new Administrador();
-//		funcionario.setNome("Maike");		
-//		funcionario.setCpf("12345678987");
-//		funcionario.setFuncao("Administreador");
-//	    funcionario.setLogin("maike123");
-//		funcionario.setSenha("123456");
-//    	funcionario.setDataNascimento(LocalDate.of(1996,02,06));
-//    	TelaCadastroFuncionariosController.controllerFuncionario.salvar(funcionario);
-//	
+    	Funcionario funcionario = new Administrador();
+		funcionario.setNome("Maike");		
+		funcionario.setCpf("12345678987");
+		funcionario.setFuncao("Administreador");
+	    funcionario.setLogin("maike123");
+		funcionario.setSenha("123456");
+    	funcionario.setDataNascimento(LocalDate.of(1996,02,06));
+    	TelaCadastroFuncionariosController.controllerFuncionario.salvar(funcionario);
+	
         columnNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         columnCPF.setCellValueFactory(new PropertyValueFactory<>("cpf"));
         columnDataNascimento.setCellValueFactory(new PropertyValueFactory<>("dataNascimento"));  

@@ -2,7 +2,7 @@ package model;
 
 public class Guiche {
 
-	private Integer identificador;
+	private String identificador;
 	//private boolean disponivel;
 	private String disponivel;
 	
@@ -11,16 +11,16 @@ public class Guiche {
 		
 	}
 	
-	public Guiche(Integer identificador, String disponivel) {
+	public Guiche(String identificador, String disponivel) {
 		this.identificador = identificador;
 		this.disponivel = disponivel;
 	}
 	//End Aug
 	
-	public Integer getIdentificador() {
+	public String getIdentificador() {
 		return identificador;
 	}
-	public void setIdentificador(Integer identificador) {
+	public void setIdentificador(String identificador) {
 		this.identificador = identificador;
 	}
 	public String getDisponivel() {

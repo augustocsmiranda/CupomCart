@@ -85,12 +85,18 @@ public class TelaConsultaProcessosController {
         atendente.setNome("Sicrano");
         
         
-        Processo processo = new Processo("2", LocalDate.now(), "Fulano", "Algum processo", "Tramitando", atendente);
-        Processo processo1 = new Processo("5", LocalDate.now(), "Sicrano", "processo2", "Indeferido", atendente);
+        Processo processo = new Processo("2", LocalDate.of(2020,12,1), "João da Silva", "Divórcio", "Tramitando", atendente);
+        Processo processo1 = new Processo("3", LocalDate.of(2021,6,1), "Carlos dos Santos", "Casamento", "Em andamento", atendente);
+        Processo processo2 = new Processo("5", LocalDate.of(2019,1,24), "Maria do Carmo", "Casamento", "Concluído", atendente);
+        Processo processo3 = new Processo("8", LocalDate.of(2021,2,6), "José Pereira", "Divórcio", "Concluído", atendente);
+        Processo processo4 = new Processo("1", LocalDate.of(2021,5,6), "Claudio Cmpos", "processo2", "Indeferido", atendente);
 
 
         controllerProcesso.salvar(processo);
         controllerProcesso.salvar(processo1);
+        controllerProcesso.salvar(processo2);
+        controllerProcesso.salvar(processo3);
+        controllerProcesso.salvar(processo4);
         
         atualizarConsultaProcessos(controllerProcesso.listar());
     }

@@ -85,7 +85,7 @@ public class TelaAtendimentoController {
 	}
 	@FXML
 	public void mudarProcessos() {
-		Main.mudarTela("processo");
+		Main.mudarTela("consulta");
 	}
 	@FXML
 	public void mudarConsulta() {

@@ -43,10 +43,10 @@ public class TelaGerenciamentoGuichesController {
 	@FXML
 	private Button atualizarListagemdeGuiches;
 	@FXML
-	private Button btnCadastrarGuiche;
+	private Button adicionarGuiche;
 	
 	@FXML private TableView<Guiche> tableGuiche =  new TableView<Guiche>();
-	@FXML private TableColumn<Guiche, Integer> columnIdentificador = new TableColumn<Guiche, Integer>();
+	@FXML private TableColumn<Guiche, String> columnIdentificador = new TableColumn<Guiche, String>();
 	@FXML private TableColumn<Guiche, String> columnDisponivel = new TableColumn<Guiche, String>();;
 	
 	
@@ -66,18 +66,19 @@ public class TelaGerenciamentoGuichesController {
 		ObservableList<Guiche> listaGuiches = FXCollections.observableArrayList();
 		listaGuiches.addAll(controllerguiche.listar());
 		tableGuiche.setItems(listaGuiches);
+		System.out.println(tableGuiche);
 	}
-	
+
 	@FXML
 	public void btnCadastrarGuiche() throws Exception{
 		Guiche guiche;
 		guiche = new Guiche();
-		guiche.setIdentificador(Integer.parseInt(this.txtIdentificador.toString()));
-		guiche.setDisponivel(this.txtDisponivel.toString());
+		guiche.setIdentificador(this.txtIdentificador.getText().toString());
+		guiche.setDisponivel(this.txtDisponivel.getText().toString());
 		
 		controllerguiche.salvar(guiche);
 		
-		atualizarListagemdeGuiches();
+		this.atualizarListagemdeGuiches();
 	}
 
 	@FXML
@@ -106,7 +107,7 @@ public class TelaGerenciamentoGuichesController {
 	}
 	@FXML
 	public void mudarProcessos() {
-		Main.mudarTela("processo");
+		Main.mudarTela("consulta");
 	}
 	@FXML
 	public void mudarLogin() {
@@ -121,16 +122,7 @@ public class TelaGerenciamentoGuichesController {
 		popup.show();
 	}
 	
-	public void adicionarGuiche() {
-		//TODO Método para a adição de novos guichês
-	}
+
 	
-	public void removerGuiche() {
-		//TODO Método para a remoção de guichês
-	}
-	
-	public void alterarStatus() {
-		//TODO Função para mopdificar o status do guichê selecionado
-	}
 	
 }
