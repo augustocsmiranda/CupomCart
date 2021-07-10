@@ -45,9 +45,9 @@ public class TelaGerenciamentoGuichesController {
 	@FXML
 	private Button btnCadastrarGuiche;
 	
-	@FXML private TableView<Guiche> tableGuiche;
-	@FXML private TableColumn<Guiche, Integer> columnIdentificador;
-	@FXML private TableColumn<Guiche, String> columnDisponivel;
+	@FXML private TableView<Guiche> tableGuiche =  new TableView<Guiche>();
+	@FXML private TableColumn<Guiche, Integer> columnIdentificador = new TableColumn<Guiche, Integer>();
+	@FXML private TableColumn<Guiche, String> columnDisponivel = new TableColumn<Guiche, String>();;
 	
 	
 	
@@ -72,10 +72,12 @@ public class TelaGerenciamentoGuichesController {
 	public void btnCadastrarGuiche() throws Exception{
 		Guiche guiche;
 		guiche = new Guiche();
-		
 		guiche.setIdentificador(Integer.parseInt(this.txtIdentificador.toString()));
 		guiche.setDisponivel(this.txtDisponivel.toString());
 		
+		controllerguiche.salvar(guiche);
+		
+		atualizarListagemdeGuiches();
 	}
 
 	@FXML

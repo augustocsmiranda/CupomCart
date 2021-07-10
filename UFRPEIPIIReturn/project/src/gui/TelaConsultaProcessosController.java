@@ -88,6 +88,7 @@ public class TelaConsultaProcessosController {
         Processo processo = new Processo("2", LocalDate.now(), "Fulano", "Algum processo", "Tramitando", atendente);
         Processo processo1 = new Processo("5", LocalDate.now(), "Sicrano", "processo2", "Indeferido", atendente);
 
+
         controllerProcesso.salvar(processo);
         controllerProcesso.salvar(processo1);
         
